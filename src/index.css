@@ -38,7 +38,7 @@ code {
   color: green;
   margin-right: 25px;
 }
-.btn{
+.btnn{
   background-color: rgb(243, 9, 138);
   color: white;
   border-radius: 10px;
@@ -51,6 +51,11 @@ code {
   width: 9rem;
   margin-left: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
+  transition: 1s;
+}
+.btnn:hover {
+  color: black;
 }
 .bag-image{
   height: 11rem;
@@ -69,4 +74,67 @@ code {
   margin-left: 10px;
   font-weight: bold;
   margin-top: -0.5rem;
+}
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 25px;
+}
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: black;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+.navigation a:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.btnlogin {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid rgb(243, 9, 138);
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: rgb(243, 9, 138);
+  font-weight: 500;
+  margin-left: 40px;
+  transition: 1s;
+
+}
+.navigation .btnlogin:hover {
+  background: rgb(243, 9, 138);
+  color: white
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 5px 4px 9px rgba(0, 0, 0, 0.2); 
+  background: linear-gradient(to right, rgb(243, 9, 138) 40%, transparent 60%);
+}
+.Rapp{
+  color: black;
+  font-size: 22px;
+  font-family: sans-serif;
+  font-weight: 700;
+  margin-left: 15px;
+}
+.b-container{
+  margin-top: 2rem;
 }
