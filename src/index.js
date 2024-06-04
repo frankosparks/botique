@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Welcome from './components/welcome';
+import Bags from './components/bags';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Welcome />  
+    <App />
   </React.StrictMode>
 );
 

@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  display: flex;
+}
+
+.bag{
+  margin-left: 2rem;
+  box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.2); 
+  width: 12rem;
+  height: 22rem;
+  border-radius: 5px;
+}
+.cart{
+  height: 2rem;
+}
+.red {
+  text-decoration: line-through;
+  color: red;
+  margin-left: 10px;
+}
+.green{
+  color: green;
+  margin-right: 25px;
+}
+.btn{
+  background-color: rgb(243, 9, 138);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 2.5rem;
+  width: 9rem;
+  margin-left: 1.5rem;
+  font-weight: bold;
+}
+.bag-image{
+  height: 11rem;
+  width: 12rem;
+}
+.center{
+  text-align: center;
+}
+.price{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: -1rem;
+}
+.d-price{
+  margin-left: 10px;
+  font-weight: bold;
+  margin-top: -0.5rem;
+}
