@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -14,10 +15,12 @@ code {
 
 .App{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .bag{
   margin-left: 2rem;
+  margin-bottom: 2rem;
   box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.2); 
   width: 12rem;
   height: 22rem;
