@@ -33,7 +33,7 @@ function NavB() {
             <Nav.Link as={Link} to="/contact">
               Contact Us
             </Nav.Link>
-            <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart" />
+            <img src="public\images\white-icon.jpg" alt="" className="cart" />
             <button className="btnlogin">Login</button>
             </Nav>
             

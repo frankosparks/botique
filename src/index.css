@@ -156,6 +156,10 @@ code {
   box-shadow: 5px 4px 9px rgba(0, 0, 0, 0.2); 
   background: linear-gradient(to right, var(--pink) 40%, white 60%);
 }
+.half-bg{
+  background: linear-gradient(to right, var(--pink) 60%, white 80%);
+  margin-top: -3rem;
+}
 .Rapp{
   color: black;
   font-size: 22px;
@@ -163,6 +167,43 @@ code {
   font-weight: 700;
   margin-left: 15px;
 }
-.b-container{
-  margin-top: rem;
+
+.vcontainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vcont{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.v-flex{
+  width: 21.5rem;
+}
+.v-bg{
+  background-color: var(--bright-pink2);
+  margin-top: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.small{
+  height: 5.5rem;
+  width: 3.5rem;
+  border-radius: 5px 0px 0px 5px;
+}
+.madam{
+  height: 33rem;
+  margin-top: -6rem;
+}
+.welcome{
+  padding: 9rem;
+  text-align: center;
+}
+.align{
+  text-align: left;
+}
+.link{
+  text-decoration: none;
 }
