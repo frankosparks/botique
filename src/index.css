@@ -207,3 +207,35 @@ code {
 .link{
   text-decoration: none;
 }
+.link-btn{
+  border: none;
+  color: rgb(225, 0, 255);
+  background-color: var(--bright-pink2);
+}
+.pink-h1{
+  color: rgb(243, 9, 138);
+  font-size: 3.5rem;
+}
+.white{
+  color: white;
+}
+.cont-disc{
+  background-color: var(--bright-pink2);
+  gap: 25rem;
+  margin-top: -7rem;
+}
+.disc{
+  width: 35rem;
+}
+.shop-btn{
+  border: none;
+  border-radius:18px ;
+  background-color:  rgb(243, 9, 138);
+  color: white;
+  padding: 7px;
+}
+/*
+.b-container{
+  background: linear-gradient(to right, var(--pink) 40%, white 60%);
+}
+*/

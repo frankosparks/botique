@@ -1,4 +1,6 @@
 import React from "react";
+import { Nav } from "react-bootstrap";
+import { Routes, Route, Link } from "react-router-dom";
 
 function View1(props2){
   //denanda -welcome
@@ -8,7 +10,15 @@ function View1(props2){
         <img src={props2.image} alt="" className="small" />
         <div className="info">
         We have the best {props2.info} for all of our customers.Quality that satisfies
-        <p><a href={props2.toview} className="link">View More</a></p>
+        <p>
+           <Nav.Link as={Link} to="/products">
+             <button className="link-btn">View More</button> 
+            </Nav.Link>
+            <Routes>
+            <Route path="/products" element={props2.toview} />
+            </Routes>
+            
+        </p>
         </div>
       </div>
     </div>

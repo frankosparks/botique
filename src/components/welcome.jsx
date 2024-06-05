@@ -1,6 +1,9 @@
 import React from "react";
 import View1 from "./homeView";
 import Home from "../home";
+import App from "../App";
+import { Nav } from "react-bootstrap";
+import { Routes, Route, Link } from "react-router-dom";
 
 function Welcome(){
   const date = new Date()
@@ -21,17 +24,35 @@ function Welcome(){
   }
 
   return(
-    <div className="vcontainer half-bg">
-      <div className="welcome">
-        <h1>Good {timeOfDay}, welcome and shop with us &#129303;.</h1>
-        <h2>Feel Youself a new</h2>
-        <p className="align">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, illo hic delectus nisi corrupti voluptates rerum veritatis vel vero pariatur. Numquam incidunt excepturi libero perspiciatis provident sed quisquam natus omnis?</p>
-        <p className="align">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptas!</p>
+    <div className="discount">
+      <div className="vcontainer half-bg">
+        <div className="welcome">
+          <h1>Good {timeOfDay}, welcome and shop with us &#129303;.</h1>
+          <h2>Feel Youself a new</h2>
+          <p className="align">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, illo hic delectus nisi corrupti voluptates rerum veritatis vel vero pariatur. Numquam incidunt excepturi libero perspiciatis provident sed quisquam natus omnis?</p>
+          <p className="align">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptas!</p>
 
-        <div>{<Home />}</div>
+          <div>{<Home />}</div>
 
+        </div>
+        <img src="\images\sas.png" alt="" className="madam"/>
       </div>
-      <img src="\images\sas.png" alt="" className="madam"/>
+      <div className="cont-disc vcontainer">
+      <img src="\images\lady.png" alt="" className="disc-img"/>
+        <div className="disc">
+          <h1 className="pink-h1">10% discount off</h1>
+          <h2 className="white">Get this offer today</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro officiis temporibus recusandae odio, libero incidunt quibusdam enim sit fugit.</p>
+          <Nav.Link as={Link} to="/products">
+              <button className="shop-btn">Shop Now</button> 
+              </Nav.Link>
+              <Routes>
+              <Route path="/products" element={<App />} />
+              </Routes>
+              
+        </div>
+        
+      </div>
     </div>
   )
 }
