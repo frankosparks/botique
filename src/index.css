@@ -1,3 +1,11 @@
+:root{
+  --bright-pink: #ffeaef;
+  --bright-pink2: #ffd2dd;
+  --pink: #ff597d;
+  --text: #04052a;
+  --pagination: #676770;
+  --green: rgb(13, 150, 13);
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,9 +21,13 @@ code {
     monospace;
 }
 
+.intro{
+  margin-top: 5rem;
+}
 .App{
   display: flex;
   flex-wrap: wrap;
+  margin-top: 5rem;
 }
 
 .bag{
@@ -25,9 +37,13 @@ code {
   width: 12rem;
   height: 22rem;
   border-radius: 5px;
+  overflow: hidden;
 }
 .cart{
   height: 2rem;
+}
+.logo{
+  height: 3rem;
 }
 .red {
   text-decoration: line-through;
@@ -60,6 +76,12 @@ code {
 .bag-image{
   height: 11rem;
   width: 12rem;
+  border-radius: 5px 5px 0px 0px;
+  transition: transform 0.5s ease
+}
+.bag-image:hover{
+  cursor: pointer;
+  transform: scale(1.1); 
 }
 .center{
   text-align: center;
@@ -104,29 +126,35 @@ code {
   width: 130px;
   height: 50px;
   background: transparent;
-  border: 2px solid rgb(243, 9, 138);
+  border: 2px solid var(--pink);
   outline: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1.1em;
-  color: rgb(243, 9, 138);
+  color: var(--pink);
   font-weight: 500;
   margin-left: 40px;
   transition: 1s;
 
 }
 .navigation .btnlogin:hover {
-  background: rgb(243, 9, 138);
+  background: var(--pink);
   color: white
 }
-
+.fixed{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 .nav{
+  margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  z-index: 1000;
   box-shadow: 5px 4px 9px rgba(0, 0, 0, 0.2); 
-  background: linear-gradient(to right, rgb(243, 9, 138) 40%, transparent 60%);
+  background: linear-gradient(to right, var(--pink) 40%, white 60%);
 }
 .Rapp{
   color: black;
@@ -136,5 +164,5 @@ code {
   margin-left: 15px;
 }
 .b-container{
-  margin-top: 2rem;
+  margin-top: rem;
 }

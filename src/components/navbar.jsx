@@ -8,9 +8,9 @@ function NavB() {
   return (
   
       <div>
-        <header className="nav">
+        <header className="nav fixed">
           <div>
-            <img src="" alt="" />
+            <img src="\images\sas.png" alt="logo" className="logo"/>
             <span className="Rapp">Prishan's Botique</span>
           </div>
 

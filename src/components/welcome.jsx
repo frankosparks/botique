@@ -19,7 +19,7 @@ function Welcome(){
   }
 
   return(
-    <div className="intro">
+    <div className="intro ">
       <h1>Good {timeOfDay}, welcome and shop with us &#129303;.</h1>
     </div>
   )
