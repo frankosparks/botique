@@ -1,10 +1,17 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 import Welcome from "./welcome";
 import App from "../App";
 
 function NavB() {
+
+const[count, setCount] = useState(0);
+
+function startCount(){
+  setCount(prev => prev + 1)
+}
+
   return (
   
       <div>
@@ -34,6 +41,7 @@ function NavB() {
               Contact Us
             </Nav.Link>
             <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart" />
+            <span className="cart-count">{count}</span>
             <button className="btnlogin">Login</button>
             </Nav>
             

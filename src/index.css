@@ -1,6 +1,7 @@
 :root{
   --bright-pink: #ffeaef;
   --bright-pink2: #ffd2dd;
+  --brigtest:#f14369;
   --pink: #ff597d;
   --text: #04052a;
   --pagination: #676770;
@@ -55,7 +56,7 @@ code {
   margin-right: 25px;
 }
 .btnn{
-  background-color: rgb(243, 9, 138);
+  background-color: var(--pink);
   color: white;
   border-radius: 10px;
   padding: 10px;
@@ -71,7 +72,7 @@ code {
   transition: 1s;
 }
 .btnn:hover {
-  color: black;
+  background-color: var(--green);
 }
 .bag-image{
   height: 11rem;
@@ -213,11 +214,11 @@ code {
   background-color: var(--bright-pink2);
 }
 .pink-h1{
-  color: rgb(243, 9, 138);
+  color: var(--brigtest);
   font-size: 3.5rem;
 }
 .white{
-  color: white;
+  color: rgb(109, 98, 98);
 }
 .cont-disc{
   background-color: var(--bright-pink2);
@@ -230,7 +231,7 @@ code {
 .shop-btn{
   border: none;
   border-radius:18px ;
-  background-color:  rgb(243, 9, 138);
+  background-color:  var(--brigtest);
   color: white;
   padding: 7px;
 }
@@ -239,3 +240,8 @@ code {
   background: linear-gradient(to right, var(--pink) 40%, white 60%);
 }
 */
+.cart-count{
+  height: 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
