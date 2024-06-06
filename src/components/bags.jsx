@@ -3,10 +3,8 @@ import React,{useState} from "react";
 function Bags(props){
 const[add, setAdd] = useState("Add to cart")
 const[background, setBackground] = useState('#dd1245')
-const[count, setCount] = useState();
 
 function startCount(){
-  setCount(prev => prev + 1)
   if(add === "Add to cart" && background === '#dd1245'){
     setAdd("Added")
     setBackground('rgb(13, 150, 13)')
