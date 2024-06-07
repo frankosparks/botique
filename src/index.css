@@ -328,3 +328,16 @@ code {
 .Remember{
   margin-bottom: 12px;
 }
+.icon{
+  height: 2rem;
+  margin-top: 3px;
+}
+.flex{
+  display: flex;
+}
+.space{
+  margin-left: 1.5rem;
+}
+.mg{
+  margin-left: 2rem;
+}
