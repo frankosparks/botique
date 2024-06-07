@@ -3,15 +3,21 @@ import { Alert, Modal, Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 import Welcome from "./welcome";
 import App from "../App";
+import Login from "./Login";
+import { Modal } from "react-bootstrap";
 
 export const Context = React.createContext();
 
 function NavB() {
 const[count, setCount] = useState(0);
-
-function startCount(){
-  setCount(prev => prev + 1)
-}
+const [loginObj, setLoginObj] = useState({})
+const[openLogin, setOpenLogin] = useState(false)
+const handleLogin = (login) => {
+  if(login) {
+      setLoginObj(login)
+  }
+  setOpenLogin(prev => !prev)
+};
 
   return (
   
@@ -44,7 +50,11 @@ function startCount(){
             </Nav.Link>
             <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart"/>
             <span className="cart-count">{count}</span>
-            <button className="btnlogin">Login</button>
+            <button 
+              type="button" 
+              className="btnlogin" 
+              onClick={() => handleLogin()}
+            >Login</button>
             </Nav>
             
         </header>
@@ -57,7 +67,18 @@ function startCount(){
             </Routes>
           
         </div>
+       
         </Context.Provider>
+        <Modal 
+           show={openLogin}
+           onHide={() => handleLogin()}
+           size={""}
+         >
+          <div className="title">
+            Login
+          </div>
+           <Login />
+        </Modal>
       </div>
     
   );
