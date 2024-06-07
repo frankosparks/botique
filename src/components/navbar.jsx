@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, Nav } from "react-bootstrap";
+import { Alert, Modal, Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 import Welcome from "./welcome";
 import App from "../App";
@@ -19,7 +19,7 @@ function startCount(){
         <Context.Provider value={[count, setCount]}>
         <header className="nav fixed">
           <div>
-            <img src="\images\sas.png" alt="logo" className="logo"/>
+            <img src="\images\prishan.jpg" alt="logo" className="logo"/>
             <span className="Rapp">Prishan's Botique</span>
           </div>
 
