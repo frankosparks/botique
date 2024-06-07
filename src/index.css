@@ -258,3 +258,73 @@ code {
   opacity: 0.9;
   font-weight: bold;
 }
+.login{
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0px 5px 5px;
+  padding: 30px 100px 30px ;
+  font-size: smaller;
+  color: white;
+  font-family: sans-serif;
+  background: linear-gradient(to right, var(--brigtest) 80%, white 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+.txt{
+  width: 17.7rem;
+  border-radius: 15px;
+  border: 1px solid rgba(236, 235, 235, 0.2);
+  height: 2rem;
+  padding-left: 1rem;
+  background: none;
+  color: rgb(249, 251, 253);
+}
+.log{
+  border-radius: 15px;
+  color: black;
+  background-color: aliceblue;
+  height: 2rem;
+  width: 17.7rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+  border: none;
+}
+.log:hover{
+  transition: 2s ease;
+  color: aliceblue;
+  background:transparent;
+  cursor: pointer;
+}
+::placeholder{
+  color: wheat;
+}
+.forget{
+  display: flex;
+}
+.rem,.pass{
+  margin-top: 7px;
+}
+.pass{
+  margin-left: 3rem;
+}
+.pass,.reg{
+  color: rgb(47, 47, 146);
+}
+.title{
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  background: linear-gradient(to right, var(--brigtest) 80%, white 100%);
+  display: flex;
+  gap: 2.5rem;
+}
+.title h1{
+  color: black;
+}
+.title img{
+  border-radius: 5px;
+}
+.modal{
+  border-radius: 10px;
+}
+.Remember{
+  margin-bottom: 12px;
+}
