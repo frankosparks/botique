@@ -4,7 +4,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Welcome from "./welcome";
 import App from "../App";
 import Login from "./Login";
-import { Modal } from "react-bootstrap";
+
 
 export const Context = React.createContext();
 
