@@ -1,6 +1,10 @@
-import React,{useState} from "react";
+import React,{useState, useContext} from "react";
+import { Context } from "./navbar";
+import CustomAlert from "./timeout";
 
 function Bags(props){
+const[showAlert, setshowAlert]= useState("")
+const[count, setCount] = useContext(Context)
 const[add, setAdd] = useState("Add to cart")
 const[background, setBackground] = useState('#dd1245')
 
@@ -8,18 +12,27 @@ function startCount(){
   if(add === "Add to cart" && background === '#dd1245'){
     setAdd("Added")
     setBackground('rgb(13, 150, 13)')
+    setCount(prev => prev + 1)
+    setshowAlert("Added to Cart");
+    
   }else{
     setAdd("Add to cart")
     setBackground('#dd1245')
-    
+    setCount(prev => prev - 1)
+    setshowAlert("Removed from Cart");
   } 
+  
 }
 
+const closeAlert = () => {
+  setshowAlert("");
+};
 
 let discountAmount = props.price_red - props.d_price;
   let discountPercentage = (discountAmount / props.price_red) * 100;
   return (
     <div className="b-container">
+       {showAlert && <CustomAlert message={showAlert} onClose={closeAlert} />}
       <div className="bag">
         <img src={props.image} alt="" className="bag-image" />
         <h4 className="center">{props.name}</h4>

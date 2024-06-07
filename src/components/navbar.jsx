@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Nav } from "react-bootstrap";
+import { Alert, Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 import Welcome from "./welcome";
 import App from "../App";
 
-function NavB() {
+export const Context = React.createContext();
 
+function NavB() {
 const[count, setCount] = useState(0);
 
 function startCount(){
@@ -15,6 +16,7 @@ function startCount(){
   return (
   
       <div>
+        <Context.Provider value={[count, setCount]}>
         <header className="nav fixed">
           <div>
             <img src="\images\sas.png" alt="logo" className="logo"/>
@@ -40,20 +42,22 @@ function startCount(){
             <Nav.Link as={Link} to="/contact">
               Contact Us
             </Nav.Link>
-            <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart" />
+            <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart"/>
             <span className="cart-count">{count}</span>
             <button className="btnlogin">Login</button>
             </Nav>
             
         </header>
+        
         <div>
         
             <Routes>
               <Route exact path="/" element={<Welcome />} />
-              <Route path="/products" element={<App />} />
+              <Route path="/products" element={<App />} />    
             </Routes>
           
         </div>
+        </Context.Provider>
       </div>
     
   );
