@@ -4,6 +4,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Welcome from "./welcome";
 import App from "../App";
 import Login from "./Login";
+import NavP from "./productsNav";
 
 
 export const Context = React.createContext();
@@ -39,7 +40,7 @@ const handleLogin = (login) => {
             <Nav.Link as={Link} to="/products">
               Products
             </Nav.Link>
-            <Nav.Link as={Link} to="/shop Now">
+            <Nav.Link as={Link} to="/shopnow">
               Shop Now
             </Nav.Link>
             <Nav.Link as={Link} to="/blog">
@@ -63,7 +64,8 @@ const handleLogin = (login) => {
         
             <Routes>
               <Route exact path="/" element={<Welcome />} />
-              <Route path="/products" element={<App />} />    
+              <Route path="/products" element={<App />} />  
+              <Route path="/shopnow" element={<NavP />} />   
             </Routes>
           
         </div>
