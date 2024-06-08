@@ -42,6 +42,7 @@ code {
 }
 .cart{
   height: 2rem;
+  margin-top: 0.6rem;
 }
 .logo{
   height: 3.2rem;
@@ -104,6 +105,7 @@ code {
   text-decoration: none;
   font-weight: 500;
   margin-left: 25px;
+  margin-top: 3px;
 }
 .navigation-p a {
   position: relative;
@@ -179,7 +181,7 @@ code {
 .fix{
   position: fixed; 
 }
-.nav{
+.nav-b{
   margin-bottom: 5rem;
   display: flex;
   align-items: center;
@@ -187,7 +189,7 @@ code {
   background-color: white;
   z-index: 1000;
   box-shadow: 5px 4px 9px rgba(0, 0, 0, 0.2); 
-  background: linear-gradient(to right, var(--pink) 40%, white 60%);
+  background: linear-gradient(to right, var(--pink) 60%, white 80%);
 }
 .nav-p{
   margin-top: 5rem;
@@ -286,6 +288,7 @@ code {
   height: 5px;
   font-size: 13px;
   font-weight: bold;
+  margin-top: 1.5rem;
 }
 .custom-alert {
   position: fixed;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Alert, Modal, Nav } from "react-bootstrap";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Router } from "react-router-dom";
 import Welcome from "./welcome";
 import App from "../App";
 import Login from "./Login";
@@ -24,7 +24,7 @@ const handleLogin = (login) => {
   
       <div>
         <Context.Provider value={[count, setCount]}>
-        <header className="nav fixed">
+        <header className="nav-b fixed ">
           <div>
             <img src="\images\prishan.jpg" alt="logo" className="logo"/>
             <span className="Rapp">Prishan's Botique</span>
@@ -65,7 +65,7 @@ const handleLogin = (login) => {
             <Routes>
               <Route exact path="/" element={<Welcome />} />
               <Route path="/products" element={<App />} />  
-              <Route path="/shopnow" element={<NavP />} />   
+              <Route path="/shopnow" element={ <NavP /> } />   
             </Routes>
           
         </div>
