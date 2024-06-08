@@ -73,9 +73,12 @@ const handleLogin = (login) => {
            show={openLogin}
            onHide={() => handleLogin()}
            size={""}
+           className="modal"
+           
          >
           <div className="title">
-            Login
+          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
+           <h1>Prishan's Botique</h1> 
           </div>
            <Login />
         </Modal>

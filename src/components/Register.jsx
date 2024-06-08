@@ -1,24 +1,15 @@
 import React, { useState } from "react";
-import Register from "./Register";
-import { Modal } from "react-bootstrap";
 
-function Login() {
+function Register() {
   const [placeholder, setPlaceholder] = useState({
     username: "Username",
+    email: "Email",
     password: "Password",
   });
 
-  const [RegisterObj, setRegisterObj] = useState({})
-  const[openRegister, setOpenRegister] = useState(false)
-  const handleRegister = (Register) => {
-    if(Register) {
-        setRegisterObj(Register)
-    }
-    setOpenRegister(prev => !prev)
-  };
-
   return (
     <div className="login">
+      <h4 className="join">Join Us</h4>
       <form action="">
         <div className="flex">
           <img src="\images\user.png" alt="" className="icon" />
@@ -33,6 +24,23 @@ function Login() {
             }
             id=""
             placeholder={placeholder.username}
+          />
+        </div>
+
+        <br />
+
+        <div className="flex">
+          <img src="\images\email.png" alt="" className="icon" />
+          <input
+            type="email"
+            className="txt"
+            onChange={(e) =>
+              setPlaceholder((prev) => ({
+                ...prev,
+                email: e.target.value,
+              }))
+            }
+            placeholder={placeholder.email}
           />
         </div>
 
@@ -56,38 +64,15 @@ function Login() {
         <div className="forget space">
           <input type="checkbox" name="" className="Remember" /> &nbsp;
           <p className="rem">Remember me</p>
-          <a href="pass" className="pass">
-            Forgot Password?
-          </a>
         </div>
         <button type="submit" className="log space">
-          Login
+          Register
         </button>
       </form>
 
-      <p className="mg">
-        Don't have an account?{" "}
-        <button  
-          className="register space" 
-          onClick={() => handleRegister()}>
-          Register
-        </button>
-      </p>
-      <Modal 
-           show={openRegister}
-           onHide={() => handleRegister()}
-           size={""}
-           className="modal"
-           
-         >
-          <div className="title">
-          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
-           <h1>Prishan's Botique</h1> 
-          </div>
-           <Register />
-        </Modal>
+      
     </div>
   );
 }
 
-export default Login;
+export default Register;
