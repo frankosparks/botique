@@ -329,8 +329,8 @@ code {
   margin-bottom: 12px;
 }
 .icon{
-  height: 2rem;
-  margin-top: 3px;
+  height: 1.5rem;
+  margin-top: 6px;
 }
 .flex{
   display: flex;
@@ -340,4 +340,18 @@ code {
 }
 .mg{
   margin-left: 2rem;
+}
+.login{
+  height: 17rem;
+}
+.register{
+  color: rgb(47, 47, 146);
+  border: none;
+  background-color: var(--brigtest);
+  text-decoration: underline;
+}
+.join{
+  text-align: center;
+  color: black;
+  margin-top: -2rem;
 }

@@ -44,10 +44,10 @@ function Welcome(){
           <h2 className="white">Get this offer today</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro officiis temporibus recusandae odio, libero incidunt quibusdam enim sit fugit.</p>
           <Nav.Link as={Link} to="/products">
-              <button className="shop-btn">Shop Now</button> 
-              </Nav.Link>
+            <button className="shop-btn">Shop Now</button> 
+          </Nav.Link>
               <Routes>
-              <Route path="/products" element={<App />} />
+                <Route path="/products" element={<App />} />
               </Routes>
               
         </div>
