@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Alert, Modal, Nav } from "react-bootstrap";
 import { Routes, Route, Link, Router } from "react-router-dom";
 import Welcome from "./welcome";
-import App from "../App";
 import Login from "./Login";
-import NavP from "./productsNav";
+import NavP from "./shopNowNav";
+import Products from "../productsNavView";
 
 
 export const Context = React.createContext();
@@ -64,7 +64,7 @@ const handleLogin = (login) => {
         
             <Routes>
               <Route exact path="/" element={<Welcome />} />
-              <Route path="/products" element={<App />} />  
+              <Route path="/products" element={<Products />} />  
               <Route path="/shopnow/*" element={ <NavP /> } />   
             </Routes>
           

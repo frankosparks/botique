@@ -21,6 +21,9 @@ code {
     monospace;
 }
 
+.c_b{
+  color: black;
+}
 .intro {
   margin-top: 5rem;
 }
@@ -279,6 +282,46 @@ code {
   background-color: var(--brigtest);
   color: white;
   padding: 7px;
+}
+.thumbs{
+  border: 2px solid var(--brigtest);
+  border-radius: 15px;
+  height: 18rem;
+}
+.p-view{
+  margin-top: 5rem;
+}
+.p-images{
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.p_w{
+  width: 30rem;
+}
+.p_g{
+  gap: 6rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.h{
+  margin-left: 4rem;
+  font-family: serif;
+  color: black;
+  font-weight: bold;
+}
+.h_pink{
+  color: var(--brigtest);
+}
+.bold{
+  font-weight:500;
+}
+.f_1{
+  font-size: 1.5rem;
+}
+.w_l{
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 /*
 .b-container{
