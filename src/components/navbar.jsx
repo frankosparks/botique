@@ -65,7 +65,7 @@ const handleLogin = (login) => {
             <Routes>
               <Route exact path="/" element={<Welcome />} />
               <Route path="/products" element={<App />} />  
-              <Route path="/shopnow" element={ <NavP /> } />   
+              <Route path="/shopnow/*" element={ <NavP /> } />   
             </Routes>
           
         </div>

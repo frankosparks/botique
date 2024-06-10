@@ -1,7 +1,7 @@
-:root{
+:root {
   --bright-pink: #ffeaef;
   --bright-pink2: #ffd2dd;
-  --brigtest:#f14369;
+  --brigtest: #f14369;
   --pink: #ff597d;
   --text: #04052a;
   --pagination: #676770;
@@ -9,42 +9,42 @@
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.intro{
+.intro {
   margin-top: 5rem;
 }
-.App{
+.App {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-left: -12px;
 }
 
-.bag{
+.bag {
   margin-left: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   width: 12rem;
   height: 22rem;
   border-radius: 5px;
   overflow: hidden;
 }
-.cart{
+.cart {
   height: 2rem;
   margin-top: 0.6rem;
 }
-.logo{
+.logo {
   height: 3.2rem;
 }
 .red {
@@ -52,11 +52,11 @@ code {
   color: red;
   margin-left: 10px;
 }
-.green{
+.green {
   color: green;
   margin-right: 25px;
 }
-.btnn{
+.btnn {
   background-color: var(--pink);
   color: white;
   border-radius: 10px;
@@ -74,26 +74,26 @@ code {
 .btnn:hover {
   background-color: var(--green);
 }
-.bag-image{
+.bag-image {
   height: 11rem;
   width: 12rem;
   border-radius: 5px 5px 0px 0px;
-  transition: transform 0.5s ease
+  transition: transform 0.5s ease;
 }
-.bag-image:hover{
+.bag-image:hover {
   cursor: pointer;
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
-.center{
+.center {
   text-align: center;
 }
-.price{
+.price {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
   margin-top: -1rem;
 }
-.d-price{
+.d-price {
   margin-left: 10px;
   font-weight: bold;
   margin-top: -0.5rem;
@@ -115,13 +115,13 @@ code {
   font-weight: 500;
   margin-left: 25px;
 }
-.navigation-p{
+.navigation-p .nav-link.active {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 .navigation a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -131,10 +131,10 @@ code {
   border-radius: 5px;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 .navigation-p a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -144,7 +144,7 @@ code {
   border-radius: 5px;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 .navigation a:hover::after {
   transform-origin: left;
@@ -167,45 +167,46 @@ code {
   font-weight: 500;
   margin-left: 40px;
   transition: 1s;
-
 }
 .navigation .btnlogin:hover {
   background: var(--pink);
-  color: white
+  color: white;
 }
-.fixed{
+.fixed {
   position: fixed;
   top: 0;
   width: 100%;
 }
 .fix{
-  position: fixed; 
+  top: 0;
+  width: 100%;
 }
-.nav-b{
+.nav-b {
   margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: white;
   z-index: 1000;
-  box-shadow: 5px 4px 9px rgba(0, 0, 0, 0.2); 
+  box-shadow: 5px 4px 9px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to right, var(--pink) 60%, white 80%);
 }
-.nav-p{
-  margin-top: 5rem;
+.nav-p {
+  margin-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background: transparent;
   margin-left: 30rem;
   z-index: 1000;
   color: var(--brigtest);
+  width: 30rem;
 }
-.half-bg{
+.half-bg {
   background: linear-gradient(to right, var(--pink) 60%, white 80%);
   margin-top: -3rem;
 }
-.Rapp{
+.Rapp {
   color: black;
   font-size: 22px;
   font-family: sans-serif;
@@ -213,69 +214,69 @@ code {
   margin-left: 15px;
 }
 
-.vcontainer{
+.vcontainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.vcont{
+.vcont {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.v-flex{
+.v-flex {
   width: 21.5rem;
 }
-.v-bg{
+.v-bg {
   background-color: var(--bright-pink2);
   margin-top: 1rem;
   border-radius: 10px;
   padding: 1rem;
 }
-.small{
+.small {
   height: 5.5rem;
   width: 3.5rem;
   border-radius: 5px 0px 0px 5px;
 }
-.madam{
+.madam {
   height: 33rem;
   margin-top: -6rem;
 }
-.welcome{
+.welcome {
   padding: 9rem;
   text-align: center;
 }
-.align{
+.align {
   text-align: left;
 }
-.link{
+.link {
   text-decoration: none;
 }
-.link-btn{
+.link-btn {
   border: none;
   color: rgb(225, 0, 255);
   background-color: var(--bright-pink2);
 }
-.pink-h1{
+.pink-h1 {
   color: var(--brigtest);
   font-size: 3.5rem;
 }
-.white{
+.white {
   color: rgb(109, 98, 98);
 }
-.cont-disc{
+.cont-disc {
   background-color: var(--bright-pink2);
   gap: 25rem;
   margin-top: -7rem;
 }
-.disc{
+.disc {
   width: 35rem;
 }
-.shop-btn{
+.shop-btn {
   border: none;
-  border-radius:18px ;
-  background-color:  var(--brigtest);
+  border-radius: 18px;
+  background-color: var(--brigtest);
   color: white;
   padding: 7px;
 }
@@ -284,7 +285,7 @@ code {
   background: linear-gradient(to right, var(--pink) 40%, white 60%);
 }
 */
-.cart-count{
+.cart-count {
   height: 5px;
   font-size: 13px;
   font-weight: bold;
@@ -304,18 +305,18 @@ code {
   opacity: 0.9;
   font-weight: bold;
 }
-.login{
+.login {
   align-items: center;
   justify-content: center;
   border-radius: 0px 0px 5px 5px;
-  padding: 30px 100px 30px ;
+  padding: 30px 100px 30px;
   font-size: smaller;
   color: white;
   font-family: sans-serif;
   background: linear-gradient(to right, var(--brigtest) 80%, white 100%);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.txt{
+.txt {
   width: 17.7rem;
   border-radius: 15px;
   border: 1px solid rgba(236, 235, 235, 0.2);
@@ -324,7 +325,7 @@ code {
   background: none;
   color: rgb(249, 251, 253);
 }
-.log{
+.log {
   border-radius: 15px;
   color: black;
   background-color: aliceblue;
@@ -334,69 +335,71 @@ code {
   margin-bottom: 0.3rem;
   border: none;
 }
-.log:hover{
+.log:hover {
   transition: 2s ease;
   color: aliceblue;
-  background:transparent;
+  background: transparent;
   cursor: pointer;
 }
-::placeholder{
+::placeholder {
   color: wheat;
 }
-.forget{
+.forget {
   display: flex;
 }
-.rem,.pass{
+.rem,
+.pass {
   margin-top: 7px;
 }
-.pass{
+.pass {
   margin-left: 3rem;
 }
-.pass,.reg{
+.pass,
+.reg {
   color: rgb(47, 47, 146);
 }
-.title{
+.title {
   border-radius: 5px 5px 0px 0px;
   text-align: center;
   background: linear-gradient(to right, var(--brigtest) 80%, white 100%);
   display: flex;
   gap: 2.5rem;
 }
-.title h1{
+.title h1 {
   color: black;
 }
-.title img{
+.title img {
   border-radius: 5px;
 }
-.modal{
+.modal {
   border-radius: 10px;
 }
-.Remember{
+.Remember {
   margin-bottom: 12px;
 }
-.icon{
+.icon {
   height: 1.5rem;
   margin-top: 6px;
 }
-.flex{
+.flex {
   display: flex;
 }
-.space{
+.space {
   margin-left: 1.5rem;
 }
-.mg{
+.mg {
   margin-left: 2rem;
 }
-.login{
+.login {
   height: 17rem;
 }
-.register{
+.register {
   color: rgb(47, 47, 146);
   border: none;
   background-color: var(--brigtest);
   text-decoration: underline;
 }
-.join{
+.join {
   text-align: center;
   color: black;
   margin-top: -2rem;

@@ -11,7 +11,7 @@ function Dress() {
         
       />
       <Dresses 
-       image="\images\dress\1 (34).jpg"
+       image="\images\dress\1 (50).jpg"
         name="Dress"
         d_price="1500"
         price_red="1800"
@@ -32,7 +32,7 @@ function Dress() {
         
       />
       <Dresses
-       image="\images\dress\1 (37).jpg"
+       image="\images\dress\1 (51).jpg"
         name="Dress"
         d_price="1000"
         price_red="1700"
@@ -46,7 +46,7 @@ function Dress() {
         
       />
       <Dresses 
-       image="\images\dress\1 (39).jpg"
+       image="\images\dress\1 (47).jpg"
         name="Dress"
         d_price="1100"
         price_red="1600"
@@ -60,21 +60,21 @@ function Dress() {
         
       />
        <Dresses 
-       image="\images\dress\1 (41).jpg"
+       image="\images\dress\1 (42).jpg"
         name="Dress"
         d_price="1600"
         price_red="1900"
         
       />
        <Dresses 
-       image="\images\dress\1 (42).jpgpg"
+       image="\images\dress\1 (52).jpg"
         name="Dress"
         d_price="1200"
         price_red="1800"
         
       />
       <Dresses 
-       image="\images\dress\1 (43).jpg"
+       image="\images\dress\1 (46).jpg"
         name="Dress"
         d_price="1900"
         price_red="2400"
