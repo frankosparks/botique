@@ -11,11 +11,11 @@ function View1(props2){
         <div className="info">
         We have the best {props2.info} for all of our customers.Quality that satisfies
         <p>
-           <Nav.Link as={Link} to="/products">
+           <Nav.Link as={Link} to="/shopnow">
              <button className="link-btn">View More</button> 
             </Nav.Link>
             <Routes>
-            <Route path="/products" element={props2.toview} />
+            <Route path="/shopnow" element={props2.toview} />
             </Routes>
             
         </p>
