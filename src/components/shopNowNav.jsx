@@ -5,6 +5,7 @@ import App from "../App";
 import Dress from "../Dresses";
 import Shoe from "../Shoes";
 import Kitengee from "../Kitenge";
+import Footer from "./footer";
 
 
 function NavP() {
@@ -12,7 +13,7 @@ function NavP() {
   return (
   
       <div>
-        <header className="nav-p fix">
+        <header className="nav-p fix ">
           <Nav className="navigation-p">
             <Nav.Link as={NavLink} to="bags" activeClassName="active">
               Bags
@@ -42,9 +43,7 @@ function NavP() {
             </Routes>
           
         </div>
-       
-        
-       
+       <Footer />
       </div>
     
   );

@@ -2,6 +2,7 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 import App from "../App";
+import Footer from "./footer";
 
 function Trends(){
   return(
@@ -30,7 +31,7 @@ function Trends(){
       
     </div>
   </div>
-  
+  <Footer />
  </div>
   )
 }
