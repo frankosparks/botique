@@ -34,7 +34,7 @@ function NavP() {
         <div>
         
             <Routes>
-              <Route exact path="/" element={<App />} />
+              <Route exact path="/" element={<Dress />} />
               <Route path="bags" element={<App />} />
               <Route path="dresses" element={<Dress />} />    
               <Route path="shoes" element={<Shoe />} /> 

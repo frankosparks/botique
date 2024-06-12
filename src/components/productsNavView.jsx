@@ -12,8 +12,8 @@ function View2(props3){
             <div >
               <hr />
               <div className="p-images">
-                <img src={props3.image1} alt="" className="thumbs" />
-                <img src={props3.image2} alt="" className="thumbs" />
+                <img src={props3.image1} alt="" className="thumbs trans" />
+                <img src={props3.image2} alt="" className="thumbs trans" />
               </div>
             </div>
           

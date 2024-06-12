@@ -38,7 +38,7 @@ function Welcome(){
         <img src="\images\sas.png" alt="" className="madam"/>
       </div>
       <div className="cont-disc vcontainer">
-      <img src="\images\lady.png" alt="" className="disc-img"/>
+      <img src="\images\group.png" alt="" className="disc-img"/>
         <div className="disc">
           <h1 className="pink-h1">10% discount off</h1>
           <h2 className="white">Get this offer today</h2>

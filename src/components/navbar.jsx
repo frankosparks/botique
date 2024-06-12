@@ -5,6 +5,7 @@ import Welcome from "./welcome";
 import Login from "./Login";
 import NavP from "./shopNowNav";
 import Products from "../productsNavView";
+import Trends from "./trends";
 
 
 export const Context = React.createContext();
@@ -65,7 +66,8 @@ const handleLogin = (login) => {
             <Routes>
               <Route exact path="/" element={<Welcome />} />
               <Route path="/products" element={<Products />} />  
-              <Route path="/shopnow/*" element={ <NavP /> } />   
+              <Route path="/shopnow/*" element={ <NavP /> } /> 
+              <Route path="/trends" element={<Trends />} />  
             </Routes>
           
         </div>

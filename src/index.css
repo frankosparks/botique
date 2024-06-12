@@ -270,11 +270,14 @@ code {
 }
 .cont-disc {
   background-color: var(--bright-pink2);
-  gap: 25rem;
+  gap: 15rem;
   margin-top: -7rem;
 }
 .disc {
   width: 35rem;
+}
+.disc-img{
+  height: 20rem;
 }
 .shop-btn {
   border: none;
@@ -446,4 +449,29 @@ code {
   text-align: center;
   color: black;
   margin-top: -2rem;
+}
+.t-img{
+  border: none;
+  border-radius: 5px;
+  height: 27rem; 
+}
+.t-images{
+  display: flex; 
+  gap: 0.5rem;
+}
+.t-info{
+ width: 30rem;
+}
+.trending{
+  gap: 3rem;
+}
+.trans{
+  transition: transform 0.5s ease;
+}
+.trans:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.over{
+  overflow: hidden;
 }
