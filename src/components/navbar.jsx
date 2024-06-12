@@ -1,23 +1,33 @@
 import React, { useState } from "react";
-import { Nav } from "react-bootstrap";
-import { Routes, Route, Link } from "react-router-dom";
+import { Alert, Modal, Nav } from "react-bootstrap";
+import { Routes, Route, Link, Router } from "react-router-dom";
 import Welcome from "./welcome";
-import App from "../App";
+import Login from "./Login";
+import NavP from "./shopNowNav";
+import Products from "../productsNavView";
+import Trends from "./trends";
+
+
+export const Context = React.createContext();
 
 function NavB() {
-
 const[count, setCount] = useState(0);
-
-function startCount(){
-  setCount(prev => prev + 1)
-}
+const [loginObj, setLoginObj] = useState({})
+const[openLogin, setOpenLogin] = useState(false)
+const handleLogin = (login) => {
+  if(login) {
+      setLoginObj(login)
+  }
+  setOpenLogin(prev => !prev)
+};
 
   return (
   
       <div>
-        <header className="nav fixed">
+        <Context.Provider value={[count, setCount]}>
+        <header className="nav-b fixed ">
           <div>
-            <img src="\images\sas.png" alt="logo" className="logo"/>
+            <img src="\images\prishan.jpg" alt="logo" className="logo"/>
             <span className="Rapp">Prishan's Botique</span>
           </div>
 
@@ -31,7 +41,7 @@ function startCount(){
             <Nav.Link as={Link} to="/products">
               Products
             </Nav.Link>
-            <Nav.Link as={Link} to="/shop Now">
+            <Nav.Link as={Link} to="/shopnow">
               Shop Now
             </Nav.Link>
             <Nav.Link as={Link} to="/blog">
@@ -40,20 +50,42 @@ function startCount(){
             <Nav.Link as={Link} to="/contact">
               Contact Us
             </Nav.Link>
-            <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart" />
+            <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart"/>
             <span className="cart-count">{count}</span>
-            <button className="btnlogin">Login</button>
+            <button 
+              type="button" 
+              className="btnlogin" 
+              onClick={() => handleLogin()}
+            >Login</button>
             </Nav>
             
         </header>
+        
         <div>
         
             <Routes>
               <Route exact path="/" element={<Welcome />} />
-              <Route path="/products" element={<App />} />
+              <Route path="/products" element={<Products />} />  
+              <Route path="/shopnow/*" element={ <NavP /> } /> 
+              <Route path="/trends" element={<Trends />} />  
             </Routes>
           
         </div>
+       
+        </Context.Provider>
+        <Modal 
+           show={openLogin}
+           onHide={() => handleLogin()}
+           size={""}
+           className="modal"
+           
+         >
+          <div className="title">
+          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
+           <h1>Prishan's Botique</h1> 
+          </div>
+           <Login />
+        </Modal>
       </div>
     
   );

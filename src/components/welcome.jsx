@@ -27,10 +27,10 @@ function Welcome(){
     <div className="discount">
       <div className="vcontainer half-bg">
         <div className="welcome">
-          <h1>Good {timeOfDay}, welcome and shop with us &#129303;.</h1>
-          <h2>Feel Youself a new</h2>
-          <p className="align">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, illo hic delectus nisi corrupti voluptates rerum veritatis vel vero pariatur. Numquam incidunt excepturi libero perspiciatis provident sed quisquam natus omnis?</p>
-          <p className="align">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptas!</p>
+          <h1 className="c_b">Good {timeOfDay}, welcome and shop with us &#129303;.</h1>
+          <h2 className="c_b">Feel Youself a new</h2>
+          <p className="align c_b">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, illo hic delectus nisi corrupti voluptates rerum veritatis vel vero pariatur. Numquam incidunt excepturi libero perspiciatis provident sed quisquam natus omnis?</p>
+          <p className="align c_b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptas!</p>
 
           <div>{<Home />}</div>
 
@@ -38,16 +38,16 @@ function Welcome(){
         <img src="\images\sas.png" alt="" className="madam"/>
       </div>
       <div className="cont-disc vcontainer">
-      <img src="\images\lady.png" alt="" className="disc-img"/>
+      <img src="\images\group.png" alt="" className="disc-img"/>
         <div className="disc">
           <h1 className="pink-h1">10% discount off</h1>
           <h2 className="white">Get this offer today</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro officiis temporibus recusandae odio, libero incidunt quibusdam enim sit fugit.</p>
-          <Nav.Link as={Link} to="/products">
-              <button className="shop-btn">Shop Now</button> 
-              </Nav.Link>
+          <p className="c_b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro officiis temporibus recusandae odio, libero incidunt quibusdam enim sit fugit.</p>
+          <Nav.Link as={Link} to="/shopnow">
+            <button className="shop-btn">Shop Now</button> 
+          </Nav.Link>
               <Routes>
-              <Route path="/products" element={<App />} />
+                <Route path="/shopnow" element={<App />} />
               </Routes>
               
         </div>
