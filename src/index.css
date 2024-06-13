@@ -550,3 +550,41 @@ code {
 .c_g{
   color: #676770;
 }
+.blog {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.blog h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.blog-post {
+  background-color: #fff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h2 {
+  margin-top: 0;
+}
+
+.blog-post .date {
+  color: #999;
+  font-size: 0.9rem;
+}
+.back{
+  background-color: var(--bright-pink2);
+}
+.blogW{
+  padding: 3.9rem;
+}
+.full{
+  background: linear-gradient(to right, var(--pink) 60%, white 80%);
+}
+.b-rad{
+  border-radius: 50%;
+}

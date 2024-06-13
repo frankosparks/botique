@@ -5,7 +5,7 @@ import { Modal } from "react-bootstrap";
 function Login() {
   const [placeholder, setPlaceholder] = useState({
     username: "Username",
-    password: "Password",
+    password: "Password"
   });
 
   const [RegisterObj, setRegisterObj] = useState({})

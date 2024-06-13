@@ -144,7 +144,7 @@ function Footer(){
               </Routes> */}
           <img src="\images\prishan.jpg" alt="logo" className="logo"/>
           <span className="Rapp c_w">Prishan's Botique.</span>
-             Copyright © 2024 Prishan's Botique. All rights reserved.
+             Copyright &copy; 2024 Prishan's Botique. All rights reserved.
           </p>
          
      </div>
