@@ -2,9 +2,9 @@ import React from "react";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
 import Register from "./Register";
-import Welcome from "./welcome";
-import { Nav } from "react-bootstrap";
-import { Routes, Route, Link } from "react-router-dom";
+// import Welcome from "./welcome";
+// import { Nav } from "react-bootstrap";
+// import { Routes, Route, Link } from "react-router-dom";
 
 function Footer(){
   const [RegisterObj, setRegisterObj] = useState({})
@@ -35,7 +35,7 @@ function Footer(){
           <p className="center">instagram</p>
         </div>
         <div className="Media">
-          <img src="\images\tiktok.avif" alt="" className="s-icon"/>
+          <img src="\images\tik.avif" alt="" className="s-icon"/>
           <p className="center">tiktok</p>
         </div>
         <div className="Media">
@@ -134,14 +134,15 @@ function Footer(){
         <hr />
         <div className="copyright">
           <p>
-          <Nav.Link as={Link} to="/">
+          {/* <Nav.Link as={Link} to="/">
           <button>
             <img src="\images\prishan.jpg" alt="logo" className="logo"/>
           </button>
           </Nav.Link>
               <Routes>
                 <Route path="/" element={<Welcome />} />
-              </Routes>
+              </Routes> */}
+          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
           <span className="Rapp c_w">Prishan's Botique.</span>
              Copyright © 2024 Prishan's Botique. All rights reserved.
           </p>
