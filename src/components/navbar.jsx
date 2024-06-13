@@ -7,6 +7,7 @@ import NavP from "./shopNowNav";
 import Products from "../productsNavView";
 import Trends from "./trends";
 import Footer from "./footer";
+import Blog from "./blog";
 
 
 export const Context = React.createContext();
@@ -69,6 +70,7 @@ const handleLogin = (login) => {
               <Route path="/products" element={<Products />} />  
               <Route path="/shopnow/*" element={ <NavP /> } /> 
               <Route path="/trends" element={<Trends />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Footer />} /> 
             </Routes>
           
