@@ -1,12 +1,14 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import Register from "./Register";
 // import Welcome from "./welcome";
 // import { Nav } from "react-bootstrap";
 // import { Routes, Route, Link } from "react-router-dom";
 
 function Footer(){
+  const navigate = useNavigate();
   const [RegisterObj, setRegisterObj] = useState({})
   const[openRegister, setOpenRegister] = useState(false)
   const handleRegister = (Register) => {
@@ -15,6 +17,8 @@ function Footer(){
     }
     setOpenRegister(prev => !prev)
   };
+
+  
 
   return(
     <div className="footer">
@@ -139,7 +143,7 @@ function Footer(){
               <Routes>
                 <Route path="/" element={<Welcome />} />
               </Routes> */}
-          <img src="\images\prishan.jpg" alt="logo" className="logo" style={{ cursor: 'pointer' }}/>
+          <img src="\images\prishan.jpg" alt="logo" className="logo" onClick={()=> navigate('/')} style={{ cursor: 'pointer' }}/>
           <span className="Rapp c_w">Prishan's Botique.</span>
              Copyright &copy; 2024 Prishan's Botique. All rights reserved.
           </p>
