@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import App from "./App";
 import View2 from "./components/productsNavView";
+import Footer from "./components/footer";
 
 function Products(){
   
@@ -46,6 +47,7 @@ function Products(){
       about="Fittings"
       toview={<App />}
       />
+      <Footer />
     </div>
   )
 }

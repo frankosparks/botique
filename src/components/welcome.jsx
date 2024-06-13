@@ -4,6 +4,7 @@ import Home from "../home";
 import App from "../App";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
+import Footer from "./footer";
 
 function Welcome(){
   const date = new Date()
@@ -53,6 +54,7 @@ function Welcome(){
         </div>
         
       </div>
+      <Footer />
     </div>
   )
 }

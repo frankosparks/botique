@@ -319,6 +319,9 @@ code {
 .bold{
   font-weight:500;
 }
+.bold1{
+  font-weight: bold;
+}
 .f_1{
   font-size: 1.5rem;
 }
@@ -474,4 +477,76 @@ code {
 }
 .over{
   overflow: hidden;
+}
+.social{
+  margin-top: 1px;
+  padding-top: 4rem;
+  height: 12rem;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: serif;
+  font-weight: bold;
+  gap: 10.5rem;
+  background-color: var(--text);
+  color: white;
+}
+.s-icon{
+  height: 5rem;
+  width: 5rem;
+  border-radius: 5px;
+}
+.f-more{
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+.f_c{
+  margin-left: 30rem;
+  margin-right: 30rem;
+}
+.f-btn{
+  margin-left:  37rem;
+  margin-top: 1rem;
+}
+.f-moremore{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  margin-top: 3rem;
+}
+/* .the-botique{
+  align-items: center;
+  justify-content: center;
+} */
+.f-small{
+  height: 1rem;
+  border-radius: 5px;
+}
+.dir{
+  flex-direction: column;
+}
+.mg1{
+ margin-top: 1rem;
+}
+.mg3{
+  margin-right: 7px;
+}
+.f-media{
+  color: white;
+  text-decoration: none;
+}
+.f-media:hover{
+  color: var(--bright-pink2);
+  cursor: pointer;
+}
+.copyright{
+  padding: 1rem;
+}
+.c_w{
+  color: white;
+}
+.c_g{
+  color: #676770;
 }
