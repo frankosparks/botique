@@ -8,6 +8,7 @@ import Products from "../productsNavView";
 import Trends from "./trends";
 import Footer from "./footer";
 import Blog from "./blog";
+import ScrollToTop from "./scrollTop";
 
 
 export const Context = React.createContext();
@@ -26,6 +27,7 @@ const handleLogin = (login) => {
   return (
   
       <div>
+        <ScrollToTop />
         <Context.Provider value={[count, setCount]}>
         <header className="nav-b fixed ">
           <div>

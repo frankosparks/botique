@@ -16,9 +16,6 @@ function Footer(){
     setOpenRegister(prev => !prev)
   };
 
-  function handleClick(){
-    
-  }
   return(
     <div className="footer">
       <div className="social">
@@ -142,7 +139,7 @@ function Footer(){
               <Routes>
                 <Route path="/" element={<Welcome />} />
               </Routes> */}
-          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
+          <img src="\images\prishan.jpg" alt="logo" className="logo" style={{ cursor: 'pointer' }}/>
           <span className="Rapp c_w">Prishan's Botique.</span>
              Copyright &copy; 2024 Prishan's Botique. All rights reserved.
           </p>
