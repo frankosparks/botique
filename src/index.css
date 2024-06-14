@@ -588,3 +588,48 @@ code {
 .b-rad{
   border-radius: 50%;
 }
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-icon {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+.search-bar ::placeholder{
+  color: var(--brigtest);
+}
+
+.search-bar button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: var(--brigtest);
+}

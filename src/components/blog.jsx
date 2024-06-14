@@ -13,7 +13,7 @@ const Blog = () => {
       title: "Summer Collection Launch",
       date: "May 20, 2024",
       content: "We are excited to introduce our summer collection! Featuring light fabrics, vibrant colors, and exclusive designs, this collection is perfect for the warm weather and sunny days..."
-    },,
+    },
     {
       title: "Sustainable Fashion: Our Commitment",
       date: "April 5, 2024",
