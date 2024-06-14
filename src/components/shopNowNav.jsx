@@ -1,51 +1,41 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, NavLink } from "react-router-dom";
-import App from "../App";
-import Dress from "../Dresses";
-import Shoe from "../Shoes";
-import Kitengee from "../Kitenge";
+import ProductList from "../productsData";
 import Footer from "./footer";
 
-
 function NavP() {
-
   return (
-  
-      <div>
-        <header className="nav-p fix ">
-          <Nav className="navigation-p">
-            <Nav.Link as={NavLink} to="bags" activeClassName="active">
-              Bags
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="dresses" activeClassName="active">
-              Dresses
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="shoes" activeClassName="active">
-              Shoes
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="kitenge" activeClassName="active">
-              Kitenge
-            </Nav.Link>
+    <div>
+      <header className="nav-p fix">
+        <Nav className="navigation-p">
+          <Nav.Link as={NavLink} to="bags" activeClassName="active">
+            Bags
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="dresses" activeClassName="active">
+            Dresses
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="shoes" activeClassName="active">
+            Shoes
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="kitenge" activeClassName="active">
+            Kitenge
+          </Nav.Link>
+        </Nav>
+      </header>
 
-            </Nav>
-            
-        </header>
-        
-        <div>
-        
-            <Routes>
-              <Route exact path="/" element={<Dress />} />
-              <Route path="bags" element={<App />} />
-              <Route path="dresses" element={<Dress />} />    
-              <Route path="shoes" element={<Shoe />} /> 
-              <Route path="kitenge" element={<Kitengee />} /> 
-            </Routes>
-          
-        </div>
-       <Footer />
+      <div>
+        <Routes>
+          <Route path="/" element={<ProductList category="dress" />} />
+          <Route path="bags" element={<ProductList category="bag" />} />
+          <Route path="dresses" element={<ProductList category="dress" />} />
+          <Route path="shoes" element={<ProductList category="shoe" />} />
+          <Route path="kitenge" element={<ProductList category="kitenge" />} />
+        </Routes>
       </div>
-    
+
+      <Footer />
+    </div>
   );
 }
 

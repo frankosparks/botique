@@ -1,7 +1,6 @@
 import React from "react";
-import View1 from "./homeView";
 import Home from "../home";
-import App from "../App";
+import ProductList from "../productsData";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 import Footer from "./footer";
@@ -48,7 +47,7 @@ function Welcome(){
             <button className="shop-btn">Shop Now</button> 
           </Nav.Link>
               <Routes>
-                <Route path="/shopnow" element={<App />} />
+              <Route path="bags" element={<ProductList category="bag" />} />
               </Routes>
               
         </div>
