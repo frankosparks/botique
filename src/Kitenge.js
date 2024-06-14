@@ -6,7 +6,7 @@ function Kitengee() {
       <Kitenge 
        image="\images\kitenge\13.jpg"
         name="Kitenge"
-        d_price="1200"
+        d_price="1300"
         price_red="1800"
         
       />
@@ -14,7 +14,7 @@ function Kitengee() {
        image="\images\kitenge\16.jpg"
         name="Kitenge"
         d_price="1500"
-        price_red="1800"
+        price_red="2000"
         
       />
       <Kitenge 
@@ -97,15 +97,15 @@ function Kitengee() {
       <Kitenge 
        image="\images\kitenge\1 (64).jpg"
         name="Kitenge"
-        d_price="1100"
-        price_red="1600"
+        d_price="900"
+        price_red="1300"
         
       />
       <Kitenge 
        image="\images\kitenge\1 (65).jpg"
         name="Kitenge"
         d_price="1100"
-        price_red="1600"
+        price_red="1700"
         
       />
       <Kitenge 

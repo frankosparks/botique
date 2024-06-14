@@ -633,3 +633,10 @@ code {
 .search-bar button:hover {
   background-color: var(--brigtest);
 }
+.cart-container{
+  background-color: white;
+  color: black;
+}
+.cart-info{
+  width: 20rem;
+}
