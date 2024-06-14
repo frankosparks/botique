@@ -1,8 +1,8 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
-import App from "../App";
 import Footer from "./footer";
+import ProductList from "../productsData";
 
 function Trends(){
   return(
@@ -17,7 +17,7 @@ function Trends(){
                   <button className="shop-btn">View More</button> 
                 </Nav.Link>
                 <Routes>
-                  <Route path="/shopnow" element={<App/>} />
+                  <Route path="/shopnow" element={<ProductList category="bag" />} />
                 </Routes>
 
     </div>

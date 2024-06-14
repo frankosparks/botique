@@ -612,7 +612,7 @@ code {
 .search-bar input {
   flex: 1;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 2px solid #4d4b4b;
   border-radius: 10px;
   outline: none;
 }
@@ -632,4 +632,11 @@ code {
 
 .search-bar button:hover {
   background-color: var(--brigtest);
+}
+.cart-container{
+  background-color: white;
+  color: black;
+}
+.cart-info{
+  width: 20rem;
 }

@@ -2,7 +2,7 @@ import React,{useState, useContext} from "react";
 import { Context } from "./navbar";
 import CustomAlert from "./timeout";
 
-function Dresses(props){
+function Product(props){
 const[showAlert, setshowAlert]= useState("")
 const[count, setCount] = useContext(Context)
 const[add, setAdd] = useState("Add to cart")
@@ -47,4 +47,4 @@ let discountAmount = props.price_red - props.d_price;
   )
 }
 
-export default Dresses;
+export default Product;

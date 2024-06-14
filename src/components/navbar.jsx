@@ -10,6 +10,7 @@ import Footer from "./footer";
 import Blog from "./blog";
 import ScrollToTop from "./scrollTop";
 import Search from "./search";
+import Cart from "./cartItems";
 
 
 export const Context = React.createContext();
@@ -56,7 +57,7 @@ const handleLogin = (login) => {
               Contact Us
             </Nav.Link>
             <Search />
-            <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart"/>
+            <Cart />
             <span className="cart-count">{count}</span>
             <button 
               type="button" 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import App from "./App";
 import View2 from "./components/productsNavView";
 import Footer from "./components/footer";
+import ProductList from "./productsData";
 
 function Products(){
   
@@ -14,38 +14,38 @@ function Products(){
        image2="\images\shoe\1 (2).jpg"
        image1="\images\lady.png"
        about="Shoes"
-       toview={<App />}
+       toview={<ProductList category="bag" />}
 
       />
       <View2 
       image1="\images\bags\bag (2).jpg"
       image2="\images\lady.png"
       about="Bags"
-      toview={<App />}
+      toview={<ProductList category="bag" />}
       />
       <View2  
       image2="\images\dress\1 (33).jpg"
       image1="\images\lady.png"
       about="Dresses"
-      toview={<App />}
+      toview={<ProductList category="bag" />}
       />
       <View2 
       image1="\images\kitenge\1 (2).jpg"
       image2="\images\lady.png"
       about="Kitenge"
-      toview={<App />}
+      toview={<ProductList category="bag" />}
       />
       <View2 
       image2="\images\shorts\1 (55).jpg"
       image1="\images\lady.png"
       about="Short"
-      toview={<App />}
+      toview={<ProductList category="bag" />}
       />
       <View2 
       image1="\images\waer1.jpg"
       image2="\images\lady.png"
       about="Fittings"
-      toview={<App />}
+      toview={<ProductList category="bag" />}
       />
       <Footer />
     </div>
