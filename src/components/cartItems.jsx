@@ -28,6 +28,7 @@ function Cart(){
                     ))}
                 </ul>
             )} */}
+            <button>view</button>
           </>
         )}
       </div> 
