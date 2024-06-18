@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Register from "./Register";
+import Cart from "./cartItems";
 // import Welcome from "./welcome";
 // import { Nav } from "react-bootstrap";
 // import { Routes, Route, Link } from "react-router-dom";
@@ -146,13 +147,12 @@ function Footer(){
           <img src="\images\prishan.jpg" alt="logo" className="logo" onClick={()=> navigate('/')} style={{ cursor: 'pointer' }}/>
           <span className="Rapp c_w">Prishan's Botique.</span>
              Copyright &copy; 2024 Prishan's Botique. All rights reserved.
-          </p>
-         
+          </p>  
      </div>
-      
-      </div>
-     
+      <Cart />
     </div>
+     
+  </div>
   )
 }
 

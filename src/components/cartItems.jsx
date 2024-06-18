@@ -15,7 +15,7 @@ function Cart(){
       <div className="cart-info search-bar">
         {showCart&& (
           <>
-          <h2>cart quantity</h2>
+          <h3>cart quantity</h3>
          {/* {cart.length === 0 ? (
                 <p>No items in the cart</p>
             ) : (
@@ -28,7 +28,9 @@ function Cart(){
                     ))}
                 </ul>
             )} */}
-            <button>view</button>
+            <img src="" alt="" />
+            <span>ksh 4000</span>
+            <p><button className="btnlogin" >view</button></p>
           </>
         )}
       </div> 

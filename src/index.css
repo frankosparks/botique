@@ -638,5 +638,7 @@ code {
   color: black;
 }
 .cart-info{
-  width: 20rem;
+  width: 30rem;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }

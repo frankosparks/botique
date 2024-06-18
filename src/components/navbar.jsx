@@ -57,7 +57,7 @@ const handleLogin = (login) => {
               Contact Us
             </Nav.Link>
             <Search />
-            <Cart />
+            {/* <Cart /> */}
             <span className="cart-count">{count}</span>
             <button 
               type="button" 
