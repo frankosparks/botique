@@ -15,7 +15,7 @@ function Cart(){
       <div className="cart-info search-bar">
         {showCart&& (
           <>
-          <h3>cart quantity</h3>
+          <h5 className="c-h">Latest Additions</h5>
          {/* {cart.length === 0 ? (
                 <p>No items in the cart</p>
             ) : (
@@ -28,9 +28,25 @@ function Cart(){
                     ))}
                 </ul>
             )} */}
-            <img src="" alt="" />
-            <span>ksh 4000</span>
-            <p><button className="btnlogin" >view</button></p>
+            <div className="c">
+              <img src="/images/dress/1 (55).jpg" alt="" className="c-img"/>
+              <span className="d-price">ksh4000</span>
+              <span className="d-price">Dress</span>
+            </div>
+
+            <div className="c">
+              <img src="/images/dress/1 (55).jpg" alt="" className="c-img"/>
+              <span className="d-price">ksh4000</span>
+              <span className="d-price">Dress</span>
+            </div>
+
+            <div className="c">
+              <img src="/images/dress/1 (55).jpg" alt="" className="c-img"/>
+              <span className="d-price">ksh4000</span>
+              <span className="d-price">Dress</span>
+            </div>
+            
+            <p><button className="btnlogin c-view" >view</button></p>
           </>
         )}
       </div> 
