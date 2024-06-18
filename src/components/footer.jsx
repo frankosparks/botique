@@ -3,7 +3,6 @@ import { Modal } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Register from "./Register";
-import Cart from "./cartItems";
 // import Welcome from "./welcome";
 // import { Nav } from "react-bootstrap";
 // import { Routes, Route, Link } from "react-router-dom";
@@ -149,7 +148,6 @@ function Footer(){
              Copyright &copy; 2024 Prishan's Botique. All rights reserved.
           </p>  
      </div>
-      <Cart />
     </div>
      
   </div>

@@ -1,14 +1,17 @@
 import React from "react";
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router";
+import CartQ from "./cartQuantity";
 
 function Cart(){
   // const { cart } = useContext(Context);
+  const navigate = useNavigate();
   const[showCart, setShowCart]= useState(false)
   const handleCart = () => {
     setShowCart(!showCart);
   }
   return(
-    <div className="search-container cart-container">
+    <div className="cart-container">
       <button onClick={handleCart} className="search-icon" >
       <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart"/>
       </button>
@@ -30,23 +33,23 @@ function Cart(){
             )} */}
             <div className="c">
               <img src="/images/dress/1 (55).jpg" alt="" className="c-img"/>
-              <span className="d-price">ksh4000</span>
               <span className="d-price">Dress</span>
+              <span className="d-price green">ksh4000</span>
             </div>
 
             <div className="c">
               <img src="/images/dress/1 (55).jpg" alt="" className="c-img"/>
-              <span className="d-price">ksh4000</span>
               <span className="d-price">Dress</span>
+              <span className="d-price green">ksh4000</span>
             </div>
 
             <div className="c">
               <img src="/images/dress/1 (55).jpg" alt="" className="c-img"/>
-              <span className="d-price">ksh4000</span>
               <span className="d-price">Dress</span>
+              <span className="d-price green">ksh4000</span>
             </div>
             
-            <p><button className="btnlogin c-view" >view</button></p>
+          <button className="c-view" onClick={()=> navigate('/cart')}>view</button>
           </>
         )}
       </div> 
