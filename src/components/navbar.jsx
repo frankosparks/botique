@@ -11,6 +11,7 @@ import Blog from "./blog";
 import ScrollToTop from "./scrollTop";
 import Search from "./search";
 import Cart from "./cartItems";
+import CartQ from "./cartQuantity";
 
 
 export const Context = React.createContext();
@@ -55,7 +56,10 @@ const handleLogin = (login) => {
             </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               Contact Us
-            </Nav.Link>
+            </Nav.Link>   
+            <Nav.Link as={Link} to="/cart">
+              Cart
+            </Nav.Link>                                                   
             <Search />
             <Cart />
             <span className="cart-count">{count}</span>
@@ -77,6 +81,7 @@ const handleLogin = (login) => {
               <Route path="/trends" element={<Trends />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Footer />} /> 
+              <Route path="/cart" element={<CartQ />} />
             </Routes>
           
         </div>
