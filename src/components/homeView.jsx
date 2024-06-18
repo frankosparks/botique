@@ -1,8 +1,13 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-function View1(props2){
+ function View1(props2){
+//   const navigate = useNavigate()
+//   const handleClick = () => {
+//     navigate(`/shopnow/${props2.toview}`)
+//   }
   //denanda -welcome
   return (
     <div className="v-flex">
