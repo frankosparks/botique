@@ -20,8 +20,14 @@ function CartQ(){
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     setCartItems(cart);
-  })
+  },[])
 
+  const removeFromCart = (itemToRemove) => {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.id !== itemToRemove.id);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    setCartItems(cart);
+  };
 
     let total = count * 3000;
     let ttotal = total * 3;
@@ -41,28 +47,14 @@ function CartQ(){
          <span className="d-price c_q red">Ksh {item.d_price}</span>
          <span className="d-price green c_q">ksh {item.price_red}</span>
          <span className="d-price orange c_q">{total}/=</span>
-         <button className="del">Delete</button>
+         <button className="del" onClick={() => removeFromCart(item)}>Delete</button>
         </div>
         
         ))
       ) : (
         <h2>Your cart is empty.</h2>
       )}
-      {/* // <div className="c_info">
-      //   <img src="/images/bags/bags (10).jpg" alt="logo" className="c_img" />
-      //   <span className="d-price c_q">{item.name}</span>
-      //   <div className="quantity">
-      //     <button onClick={increment} className="c_B">+</button>
-      //     <span className="c_c">{count}</span>
-      //     <button onClick={decrement} className="c_B">-</button>
-      //   </div>
-      //   <span className="d-price c_q red">Ksh {item.d_price}</span>
-      //   <span className="d-price green c_q">ksh 3000</span>
-      //   <span className="d-price orange c_q">{total}/=</span>
-      //   <button className="del">Delete</button>
-      // </div>
       
-      // <span className="d-price t_price">Total: {ttotal}/=</span> */}
       <span className="d-price t_price">Total: {ttotal}/=</span>
     </div> 
   )

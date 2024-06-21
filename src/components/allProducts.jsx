@@ -7,24 +7,30 @@ const[showAlert, setshowAlert]= useState("")
 const[count, setCount] = useContext(Context)
 const[add, setAdd] = useState("Add to cart")
 const[background, setBackground] = useState('#dd1245')
+const [inCart, setInCart] = useState(
+  JSON.parse(localStorage.getItem('cart'))?.some(item => item.id === props.id) || false
+);
 
 function startCount(){
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.push(props);
+  
   if(add === "Add to cart" && background === '#dd1245'){
     localStorage.setItem('cart', JSON.stringify(cart));
     setAdd("Added")
     setBackground('rgb(13, 150, 13)')
     setCount(prev => prev + 1)
     setshowAlert("Added to Cart");
+    cart.push(props);
     
   }else{
     setAdd("Add to cart")
     setBackground('#dd1245')
     setCount(prev => prev - 1)
     setshowAlert("Removed from Cart");
+    cart = cart.filter(item => item.id !== props.id);
   } 
-  
+  localStorage.setItem('cart', JSON.stringify(cart));
+  setInCart(!inCart); // Toggle the inCart stat
 }
 
 const closeAlert = () => {

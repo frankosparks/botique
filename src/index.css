@@ -688,6 +688,7 @@ code {
   width: 10rem;
   height: 10rem;
   border-radius: 5px;
+  margin-bottom: 1rem;
 }
 .orange{
   color: orange;
