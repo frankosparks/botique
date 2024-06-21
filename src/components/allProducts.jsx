@@ -9,7 +9,10 @@ const[add, setAdd] = useState("Add to cart")
 const[background, setBackground] = useState('#dd1245')
 
 function startCount(){
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push(props);
   if(add === "Add to cart" && background === '#dd1245'){
+    localStorage.setItem('cart', JSON.stringify(cart));
     setAdd("Added")
     setBackground('rgb(13, 150, 13)')
     setCount(prev => prev + 1)

@@ -674,16 +674,20 @@ code {
 .c_q{
   font-size:20px;
 }
+.c_n{
+  width: 5.5rem;
+}
 .c_info{
   display: flex;
   align-items: center;
   gap: 3rem;
   /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
-  border-radius: 1  5px;
+  border-radius: 5px;
 }
 .c_img{
   width: 10rem;
   height: 10rem;
+  border-radius: 5px;
 }
 .orange{
   color: orange;
