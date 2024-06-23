@@ -30,7 +30,7 @@ function startCount(){
     cart = cart.filter(item => item.id !== props.id);
   } 
   localStorage.setItem('cart', JSON.stringify(cart));
-  setInCart(!inCart); // Toggle the inCart stat
+  setInCart(!inCart); 
 }
 
 const closeAlert = () => {
