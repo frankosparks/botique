@@ -58,11 +58,14 @@ const handleLogin = (login) => {
               Contact Us
             </Nav.Link>   
             <Nav.Link as={Link} to="/cart">
-              Cart
+            <div className="cart-container">
+              <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart"/>
+              <span className="cart-count">{count}</span>
+            </div> 
             </Nav.Link>                                                   
             <Search />
-            <Cart />
-            <span className="cart-count">{count}</span>
+            {/* <Cart /> */}
+            
             <button 
               type="button" 
               className="btnlogin" 
