@@ -335,9 +335,10 @@ code {
 */
 .cart-count {
   height: 5px;
+  width: 10px;
   font-size: 13px;
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .custom-alert {
   position: fixed;
@@ -590,6 +591,8 @@ code {
 .search-container {
   position: relative;
   display: inline-block;
+  margin-top: 7px;
+  margin-left: 10px;
 }
 
 .search-icon {
@@ -634,7 +637,10 @@ code {
 }
 .cart-container{
   background-color: white;
+  border-radius: 9px;
   color: black;
+  display: flex;
+  margin-right: -1rem;
 }
 .cart-info{
   align-items: center;
