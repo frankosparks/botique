@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
+import { Context } from "./navbar";
 
 function CartQ(){
+  const[count, setCount] = useContext(Context)
   const[cartItems, setCartItems]= useState([])
-  const[count, setCount]= useState(1)
+  const[cont, setCont]= useState(1)
   function increment(){
-    setCount(prev => prev + 1)
-    if(count >= 20){
-      setCount(20)
+    setCont(prev => prev + 1)
+    if(cont >= 20){
+      setCont(20)
     }
   }
   function decrement(){
-    setCount(prev => prev - 1)
-    if(count <= 1){
-      setCount(1)
+    setCont(prev => prev - 1)
+    if(cont <= 1){
+      setCont(1)
     }
   }
 
@@ -27,9 +29,10 @@ function CartQ(){
     cart = cart.filter(item => item.id !== itemToRemove.id);
     localStorage.setItem('cart', JSON.stringify(cart));
     setCartItems(cart);
+    setCount(prev => prev - 1)
   };
 
-    let total = count * 3000;
+    let total = cont * 3000;
     let ttotal = total * 3;
   
   return(
@@ -41,7 +44,7 @@ function CartQ(){
           <span className="d-price c_q c_n ">{item.name}</span>
           <div className="quantity">
             <button onClick={increment} className="c_B">+</button>
-            <span className="c_c">{count}</span>
+            <span className="c_c">{cont}</span>
             <button onClick={decrement} className="c_B">-</button>
          </div>
          <span className="d-price c_q red">Ksh {item.d_price}</span>
