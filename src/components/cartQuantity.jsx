@@ -12,33 +12,49 @@ function CartQ() {
       quantity: item.quantity || 1
     }));
     setCartItems(initializedCart);
-  }, []);
 
-  const increment = (id) => {
+    // Initialize the count based on the total quantity of items in the cart
+    const initialCount = initializedCart.reduce((acc, item) => acc + item.quantity, 0);
+    setCount(initialCount);
+  }, [setCount]);
+
+  const increment = (itemId) => {
     setCartItems(prevItems =>
       prevItems.map(item =>
-        item.id === id ? { ...item, quantity: Math.min(item.quantity + 1, 20) } : item
+        item.id === itemId ? { ...item, quantity: Math.min(item.quantity + 1, 20) } : item
       )
     );
+
+    const item = cartItems.find(item => item.id === itemId);
+    if (item && item.quantity < 20) {
+      setCount(prevCount => prevCount + 1);
+    }
   };
+   
 
-  const decrement = (id) => {
+  const decrement = (itemId) => {
     setCartItems(prevItems =>
       prevItems.map(item =>
-        item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
+        item.id === itemId ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
       )
     );
+
+    const item = cartItems.find(item => item.id === itemId);
+    if (item && item.quantity > 1) {
+      setCount(prevCount => prevCount - 1);
+    }
   };
 
   const removeFromCart = (itemToRemove) => {
     const updatedCart = cartItems.filter(item => item.id !== itemToRemove.id);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-    setCount(prev => prev - itemToRemove.quantity); // Adjust count based on removed quantity
+
+    setCount(prevCount => prevCount - itemToRemove.quantity);
   };
 
   const calculateTotal = (item) => {
-    return item.quantity * item.d_price;
+    return item.quantity * item.price_red;
   };
 
   const calculateGrandTotal = () => {
@@ -57,8 +73,8 @@ function CartQ() {
               <span className="c_c">{item.quantity}</span>
               <button onClick={() => decrement(item.id)} className="c_B">-</button>
             </div>
-            <span className="d-price c_q red">Ksh {item.price_red}</span>
-            <span className="d-price green c_q">Ksh {item.d_price}</span>
+            <span className="d-price c_q red">Ksh {item.d_price}</span>
+            <span className="d-price green c_q">Ksh {item.price_red}</span>
             <span className="d-price orange c_q">{calculateTotal(item)}/=</span>
             <button className="del" onClick={() => removeFromCart(item)}>Delete</button>
           </div>
