@@ -31,7 +31,7 @@ function Login() {
       })
       .then(res =>{
         if(res.data == "exist"){
-          history("/home",{state:{id:username}})
+          history("/",{state:{id:username}})
         }
         else if(res.data == "notexist");{
           alert("User not registred")
