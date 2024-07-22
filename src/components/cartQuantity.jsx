@@ -37,8 +37,6 @@ function CartQ() {
     const updatedCart = cartItems.filter(item => item.id !== itemToRemove.id);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-
-    // Decrement the count by 1 since we're removing an item
     setCount(prevCount => prevCount - 1);
   };
 

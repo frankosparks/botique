@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import Register from "./Register";
 import { Modal } from "react-bootstrap";
+import axios from "axios";
 
 function Login() {
   const [placeholder, setPlaceholder] = useState({
     username: "Username",
     password: "Password"
   });
+
+  async function submit(e){
+    e.preventDefault();
+
+    try{
+      await axios.post("https://localhost:8000/")
+    }
+    catch(e){
+      console.log(e)
+    }
+  }
 
   const [RegisterObj, setRegisterObj] = useState({})
   const[openRegister, setOpenRegister] = useState(false)
@@ -60,7 +72,7 @@ function Login() {
             Forgot Password?
           </a>
         </div>
-        <button type="submit" className="log space">
+        <button type="submit" className="log space" onClick={submit}>
           Login
         </button>
       </form>
