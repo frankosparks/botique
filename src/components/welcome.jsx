@@ -4,8 +4,10 @@ import ProductList from "../productsData";
 import { Nav } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
 import Footer from "./footer";
+import { useLocation } from "react-router-dom";
 
 function Welcome(){
+  const location = useLocation()
   const date = new Date()
   const hours = date.getHours()
   let timeOfDay
@@ -27,7 +29,7 @@ function Welcome(){
     <div className="discount">
       <div className="vcontainer half-bg">
         <div className="welcome">
-          <h1 className="c_b">Good {timeOfDay}, welcome and shop with us &#129303;.</h1>
+          <h1 className="c_b">Good {timeOfDay} {location.state.id}, welcome and shop with us &#129303;.</h1>
           <h2 className="c_b">Feel Youself a new</h2>
           <p className="align c_b">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, illo hic delectus nisi corrupti voluptates rerum veritatis vel vero pariatur. Numquam incidunt excepturi libero perspiciatis provident sed quisquam natus omnis?</p>
           <p className="align c_b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptas!</p>
