@@ -1,5 +1,5 @@
 const express = require("express")
-const collection = require("./src/mongo")
+const collection = require("./mongo")
 const cors = require("cors")
 const app = express()
 app.use(express.json())
@@ -51,6 +51,6 @@ app.post("/register", async(res, req) =>{
 
 })
 
-app.listen(8000, () =>{
+app.listen(3000, () =>{
   console.log("Port connected")
 })

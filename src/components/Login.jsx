@@ -26,14 +26,14 @@ function Login() {
     e.preventDefault();
 
     try{
-      await axios.post("https://localhost:8000/", {
+      await axios.post("https://localhost:3000/", {
         username,password
       })
       .then(res =>{
-        if(res.data == "exist"){
+        if(res.data === "exist"){
           history("/",{state:{id:username}})
         }
-        else if(res.data == "notexist");{
+        else if(res.data === "notexist");{
           alert("User not registred")
         }
       })

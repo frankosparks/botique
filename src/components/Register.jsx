@@ -17,14 +17,14 @@ function Register() {
     e.preventDefault();
 
     try{
-      await axios.post("https://localhost:8000/register", {
+      await axios.post("https://localhost:3000/register", {
         username,email,password
       })
       .then(res =>{
-        if(res.data == "exist"){
+        if(res.data === "exist"){
           alert("User already exists")
         }
-        else if(res.data == "notexist");{
+        else if(res.data === "notexist");{
           history("/",{state:{id:username}})
         }
       })

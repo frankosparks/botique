@@ -1,11 +1,11 @@
 const mongoose = require("mongoose")
-mongoose.Connect("mongodb://localhost27017/react-login-tut")
+mongoose.connect("mongodb+srv://Shan:admin@cluster0.dgczfio.mongodb.net/Pritt")
 .then(() => {
   console.log("Mongodb connnected")
 })
 .catch(() =>{
   console.log("Failed")
-})
+})  
 
 
 const newSchema =  new mongoose.Schema({
@@ -23,6 +23,11 @@ const newSchema =  new mongoose.Schema({
   }
 })
 
+// const collection1 = new collection({
+//   username:"frank",
+//   email:"maina@gmail.com",
+//   password:"234"
+// })
 const collection = mongoose.model("collection", newSchema)
 
 module.exports = collection
