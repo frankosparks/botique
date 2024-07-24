@@ -51,6 +51,6 @@ app.post("/register", async(res, req) =>{
 
 })
 
-app.listen(3000, () =>{
+app.listen(8000, () =>{
   console.log("Port connected")
 })

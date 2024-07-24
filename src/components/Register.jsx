@@ -17,7 +17,7 @@ function Register() {
     e.preventDefault();
 
     try{
-      await axios.post("https://localhost:3000/register", {
+      await axios.post("https://localhost:8000/register", {
         username,email,password
       })
       .then(res =>{
@@ -29,6 +29,7 @@ function Register() {
         }
       })
       .catch(e =>{
+        alert("Something wrong")
         console.log(e)
       })
     }
