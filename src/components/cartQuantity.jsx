@@ -13,9 +13,8 @@ function CartQ() {
     }));
     setCartItems(initializedCart);
 
-    // Initialize the count based on the total quantity of items in the cart
-    const initialCount = initializedCart.reduce((acc, item) => acc + item.quantity, 0);
-    setCount(initialCount);
+    // Initialize the count based on the number of unique items in the cart
+    setCount(initializedCart.length);
   }, [setCount]);
 
   const increment = (itemId) => {
@@ -24,13 +23,7 @@ function CartQ() {
         item.id === itemId ? { ...item, quantity: Math.min(item.quantity + 1, 20) } : item
       )
     );
-
-    const item = cartItems.find(item => item.id === itemId);
-    if (item && item.quantity < 20) {
-      setCount(prevCount => prevCount + 1);
-    }
   };
-   
 
   const decrement = (itemId) => {
     setCartItems(prevItems =>
@@ -38,19 +31,13 @@ function CartQ() {
         item.id === itemId ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
       )
     );
-
-    const item = cartItems.find(item => item.id === itemId);
-    if (item && item.quantity > 1) {
-      setCount(prevCount => prevCount - 1);
-    }
   };
 
   const removeFromCart = (itemToRemove) => {
     const updatedCart = cartItems.filter(item => item.id !== itemToRemove.id);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-
-    setCount(prevCount => prevCount - itemToRemove.quantity);
+    setCount(prevCount => prevCount - 1);
   };
 
   const calculateTotal = (item) => {

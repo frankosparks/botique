@@ -101,7 +101,7 @@ const handleLogin = (login) => {
           <img src="\images\prishan.jpg" alt="logo" className="logo"/>
            <h1>Prishan's Botique</h1> 
           </div>
-           <Login />
+           <Login setOpenLogin={setOpenLogin}/>
         </Modal>
       </div>
     
