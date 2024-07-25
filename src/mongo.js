@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://Shan:admin@cluster0.dgczfio.mongodb.net/Pritt")
+mongoose.connect("mongodb+srv://Shan:admin@cluster0.dgczfio.mongodb.net/Pritt?retryWrites=true&w=majority")
 .then(() => {
   console.log("Mongodb connnected")
 })
@@ -11,15 +11,15 @@ mongoose.connect("mongodb+srv://Shan:admin@cluster0.dgczfio.mongodb.net/Pritt")
 const newSchema =  new mongoose.Schema({
   username:{
     type:String,
-    require: true
+    required: true
   },
   email:{
     type:String,
-    require: true
+    required: true
   },
   password:{
     type:String,
-    require: true
+    required: true
   }
 })
 

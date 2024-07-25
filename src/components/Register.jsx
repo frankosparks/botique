@@ -1,40 +1,42 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router";
+import { useNavigate } from "react-router-dom"; // Assuming you're using react-router-dom v6
 
 function Register() {
-  const history = useLocation()
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [email, setEmail] = useState('')
-  // const [placeholder, setPlaceholder] = useState({
-  //   username: "Username",
-  //   email: "Email",
-  //   password: "Password",
-  // });
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
-  async function submit(e){
+  async function submit(e) {
     e.preventDefault();
 
-    try{
-      await axios.post("https://localhost:8000/register", {
-        username,email,password
-      })
-      .then(res =>{
-        if(res.data === "exist"){
-          alert("User already exists")
-        }
-        else if(res.data === "notexist");{
-          history("/",{state:{id:username}})
-        }
-      })
-      .catch(e =>{
-        alert("Something wrong")
-        console.log(e)
-      })
-    }
-    catch(e){
-      console.log(e)
+    try {
+      const res = await axios.post("http://localhost:8000/register", {
+        username,
+        email,
+        password
+      });
+
+      if (res.data === "exist") {
+        alert("User already exists");
+      } else if (res.data === "notexist") {
+        navigate("/", { state: { id: username } });
+      }
+    } catch (error) {
+      if (error.response) {
+        console.log("Error response:", error.response.data);
+        console.log("Error status:", error.response.status);
+        console.log("Error headers:", error.response.headers);
+        alert(`Server error: ${error.response.data}`);
+      } else if (error.request) {
+        console.log("Error request:", error.request);
+        alert("No response received from server. Please try again later.");
+      } else {
+        console.log("Error message:", error.message);
+        alert(`Error: ${error.message}`);
+      }
+      console.log("Error config:", error.config);
     }
   }
 
@@ -43,15 +45,12 @@ function Register() {
       <h4 className="join">Join Us</h4>
       <form action="">
 
-      <div className="flex">
-          <img src="\images\user.png" alt="" className="icon" />
+        <div className="flex">
+          <img src="/images/user.png" alt="" className="icon" />
           <input
             type="text"
             className="txt"
-            onChange={(e) =>{
-              setUsername(e.target.value)
-            }
-          }
+            onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
           />
         </div>
@@ -59,13 +58,11 @@ function Register() {
         <br />
 
         <div className="flex">
-          <img src="\images\email.png" alt="" className="icon" />
+          <img src="/images/email.png" alt="" className="icon" />
           <input
             type="email"
             className="txt"
-            onChange={(e) =>{
-              setEmail(e.target.value)
-            } }
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
           />
         </div>
@@ -73,78 +70,23 @@ function Register() {
         <br />
 
         <div className="flex">
-          <img src="\images\padlock.webp" alt="" className="icon" />
+          <img src="/images/padlock.webp" alt="" className="icon" />
           <input
             type="password"
             className="txt"
-            onChange={(e) =>{
-              setPassword(e.target.value)
-            } 
-          }
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
         </div>
-
-        {/* <div className="flex">
-          <img src="\images\user.png" alt="" className="icon" />
-          <input
-            type="text"
-            className="txt"
-            onChange={(e) =>
-              setPlaceholder((prev) => ({
-                ...prev,
-                username: e.target.value,
-              }))
-            }
-            id=""
-            placeholder={placeholder.username}
-          />
-        </div>
-
-        <br />
-
-        <div className="flex">
-          <img src="\images\email.png" alt="" className="icon" />
-          <input
-            type="email"
-            className="txt"
-            onChange={(e) =>
-              setPlaceholder((prev) => ({
-                ...prev,
-                email: e.target.value,
-              }))
-            }
-            placeholder={placeholder.email}
-          />
-        </div>
-
-        <br />
-
-        <div className="flex">
-          <img src="\images\padlock.webp" alt="" className="icon" />
-          <input
-            type="password"
-            className="txt"
-            onChange={(e) =>
-              setPlaceholder((prev) => ({
-                ...prev,
-                password: e.target.value,
-              }))
-            }
-            placeholder={placeholder.password}
-          />
-        </div> */}
 
         <div className="forget space">
           <input type="checkbox" name="" className="Remember" /> &nbsp;
           <p className="rem">Remember me</p>
         </div>
-        <button type="submit" className="log space" onClick={submit}> 
+        <button type="submit" className="log space" onClick={submit}>
           Register
         </button>
       </form>
-
-      
     </div>
   );
 }

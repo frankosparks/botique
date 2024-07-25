@@ -1,3 +1,191 @@
+// import React, { useState } from "react";
+// import Register from "./Register";
+// import { Modal } from "react-bootstrap";
+// import axios from "axios";
+// import { useLocation } from "react-router";
+
+// function Login() {
+//   const history = useLocation()
+//   const [username, setUsername] = useState('')
+//   const [password, setPassword] = useState('')
+//   // const [placeholder, setPlaceholder] = useState({
+//   //   username: "Username",
+//   //   password: "Password"
+//   // });
+
+//   const [RegisterObj, setRegisterObj] = useState({})
+//   const[openRegister, setOpenRegister] = useState(false)
+//   const handleRegister = (Register) => {
+//     if(Register) {
+//         setRegisterObj(Register)
+//     }
+//     setOpenRegister(prev => !prev)
+//   };
+
+//   async function submit(e) {
+//     e.preventDefault();
+  
+//     try {
+//       const res = await axios.post("https://localhost:8000/", { username, password });
+      
+//       if (res.data === "exist") {
+//         history("/", { state: { id: username } });
+//       } else if (res.data === "notexist") {
+//         alert("User not registered");
+//       }
+//     } catch (error) {
+//       if (error.response) {
+//         // Server responded with a status other than 200 range
+//         console.log("Error response:", error.response.data);
+//         console.log("Error status:", error.response.status);
+//         console.log("Error headers:", error.response.headers);
+//         alert(`Server error: ${error.response.data}`);
+//       } else if (error.request) {
+//         // Request was made but no response received
+//         console.log("Error request:", error.request);
+//         alert("No response received from server. Please try again later.");
+//       } else {
+//         // Something else happened in making the request that triggered an error
+//         console.log("Error message:", error.message);
+//         alert(`Error: ${error.message}`);
+//       }
+//       console.log("Error config:", error.config);
+//     }
+//   }
+  
+
+//   // async function submit(e){
+//   //   e.preventDefault();
+
+//   //   try{
+//   //     await axios.post("https://localhost:8000/", {
+//   //       username,password
+//   //     })
+//   //     .then(res =>{
+//   //       if(res.data === "exist"){
+//   //         history("/",{state:{id:username}})
+//   //       }
+//   //       else if(res.data === "notexist");{
+//   //         alert("User not registred")
+//   //       }
+//   //     })
+
+//   //     .catch(e =>{
+//   //       alert("Wrong details")
+//   //       console.log(e)
+//   //     })
+//   //   }
+    
+//   //   catch(e){
+//   //     console.log(e)
+//   //   }
+//   // }
+
+//   return (
+//     <div className="login">
+//       <form action="">
+
+//       <div className="flex">
+//           <img src="\images\user.png" alt="" className="icon" />
+//           <input
+//             type="text"
+//             className="txt"
+//             onChange={(e) =>{
+//               setUsername(e.target.value)
+//             }
+//           }
+//             placeholder="Username"
+//           />
+//         </div>
+
+//         <br />
+
+//         <div className="flex">
+//           <img src="\images\padlock.webp" alt="" className="icon" />
+//           <input
+//             type="password"
+//             className="txt"
+//             onChange={(e) =>{
+//               setPassword(e.target.value)
+//             } 
+//           }
+//             placeholder="Password"
+//           />
+//         </div>
+
+//         {/* <div className="flex">
+//           <img src="\images\user.png" alt="" className="icon" />
+//           <input
+//             type="text"
+//             className="txt"
+//             onChange={(e) =>
+//               setPlaceholder((prev) => ({
+//                 ...prev,
+//                 username: e.target.value,
+//               }))
+//             }
+//             id=""
+//             placeholder={placeholder.username}
+//           />
+//         </div>
+
+//         <br />
+
+//         <div className="flex">
+//           <img src="\images\padlock.webp" alt="" className="icon" />
+//           <input
+//             type="password"
+//             className="txt"
+//             onChange={(e) =>
+//               setPlaceholder((prev) => ({
+//                 ...prev,
+//                 password: e.target.value,
+//               }))
+//             }
+//             placeholder={placeholder.password}
+//           />
+//         </div> */}
+
+//         <div className="forget space">
+//           <input type="checkbox" name="" className="Remember" /> &nbsp;
+//           <p className="rem">Remember me</p>
+//           <a href="pass" className="pass">
+//             Forgot Password?
+//           </a>
+//         </div>
+//         <button type="submit" className="log space" onClick={submit}>
+//           Login
+//         </button>
+//       </form>
+
+//       <p className="mg">
+//         Don't have an account?{" "}
+//         <button  
+//           className="register space" 
+//           onClick={() => handleRegister()}>
+//           Register
+//         </button>
+//       </p>
+//       <Modal 
+//            show={openRegister}
+//            onHide={() => handleRegister()}
+//            size={""}
+//            className="modal"
+           
+//          >
+//           <div className="title">
+//           <img src="\images\prishan.jpg" alt="logo" className="logo"/>
+//            <h1>Prishan's Botique</h1> 
+//           </div>
+//            <Register />
+//         </Modal>
+//     </div>
+//   );
+// }
+
+// export default Login;
+
+
 import React, { useState } from "react";
 import Register from "./Register";
 import { Modal } from "react-bootstrap";
@@ -5,147 +193,100 @@ import axios from "axios";
 import { useLocation } from "react-router";
 
 function Login() {
-  const history = useLocation()
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  // const [placeholder, setPlaceholder] = useState({
-  //   username: "Username",
-  //   password: "Password"
-  // });
+  const history = useLocation();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [openRegister, setOpenRegister] = useState(false);
 
-  const [RegisterObj, setRegisterObj] = useState({})
-  const[openRegister, setOpenRegister] = useState(false)
-  const handleRegister = (Register) => {
-    if(Register) {
-        setRegisterObj(Register)
-    }
-    setOpenRegister(prev => !prev)
+  const handleRegister = () => {
+    setOpenRegister(prev => !prev);
   };
 
-  async function submit(e){
+  async function submit(e) {
     e.preventDefault();
 
-    try{
-      await axios.post("https://localhost:8000/", {
-        username,password
-      })
-      .then(res =>{
-        if(res.data === "exist"){
-          history("/",{state:{id:username}})
-        }
-        else if(res.data === "notexist");{
-          alert("User not registred")
-        }
-      })
-
-      .catch(e =>{
-        alert("Wrong details")
-        console.log(e)
-      })
-    }
-    catch(e){
-      console.log(e)
+    try {
+      const res = await axios.post("http://localhost:8000/", { username, password });
+      if (res.data === "exist") {
+        alert("Done");
+        // history("/", { state: { id: username } });
+      } else if (res.data === "notexist") {
+        alert("User not registered");
+      }
+    } catch (error) {
+      if (error.response) {
+        console.log("Error response:", error.response.data);
+        console.log("Error status:", error.response.status);
+        console.log("Error headers:", error.response.headers);
+        alert(`Server error: ${error.response.data}`);
+      } else if (error.request) {
+        console.log("Error request:", error.request);
+        alert("No response received from server. Please try again later.");
+      } else {
+        console.log("Error message:", error.message);
+        alert(`Error: ${error.message}`);
+      }
+      console.log("Error config:", error.config);
     }
   }
 
   return (
     <div className="login">
-      <form action="">
-
-      <div className="flex">
-          <img src="\images\user.png" alt="" className="icon" />
+      <form action="" onSubmit={submit}>
+        <div className="flex">
+          <img src="/images/user.png" alt="" className="icon" />
           <input
             type="text"
             className="txt"
-            onChange={(e) =>{
-              setUsername(e.target.value)
-            }
-          }
+            onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
+            value={username}
           />
         </div>
 
         <br />
 
         <div className="flex">
-          <img src="\images\padlock.webp" alt="" className="icon" />
+          <img src="/images/padlock.webp" alt="" className="icon" />
           <input
             type="password"
             className="txt"
-            onChange={(e) =>{
-              setPassword(e.target.value)
-            } 
-          }
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
+            value={password}
           />
         </div>
-
-        {/* <div className="flex">
-          <img src="\images\user.png" alt="" className="icon" />
-          <input
-            type="text"
-            className="txt"
-            onChange={(e) =>
-              setPlaceholder((prev) => ({
-                ...prev,
-                username: e.target.value,
-              }))
-            }
-            id=""
-            placeholder={placeholder.username}
-          />
-        </div>
-
-        <br />
-
-        <div className="flex">
-          <img src="\images\padlock.webp" alt="" className="icon" />
-          <input
-            type="password"
-            className="txt"
-            onChange={(e) =>
-              setPlaceholder((prev) => ({
-                ...prev,
-                password: e.target.value,
-              }))
-            }
-            placeholder={placeholder.password}
-          />
-        </div> */}
 
         <div className="forget space">
-          <input type="checkbox" name="" className="Remember" /> &nbsp;
+          <input type="checkbox" className="Remember" /> &nbsp;
           <p className="rem">Remember me</p>
           <a href="pass" className="pass">
             Forgot Password?
           </a>
         </div>
-        <button type="submit" className="log space" onClick={submit}>
+        <button type="submit" className="log space">
           Login
         </button>
       </form>
 
       <p className="mg">
         Don't have an account?{" "}
-        <button  
-          className="register space" 
-          onClick={() => handleRegister()}>
+        <button className="register space" onClick={handleRegister}>
           Register
         </button>
       </p>
-      <Modal 
-           show={openRegister}
-           onHide={() => handleRegister()}
-           size={""}
-           className="modal"
-           
-         >
-          <div className="title">
-          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
-           <h1>Prishan's Botique</h1> 
-          </div>
-           <Register />
-        </Modal>
+      <Modal
+        show={openRegister}
+        onHide={handleRegister}
+        size=""
+        className="modal"
+      >
+        <div className="title">
+          <img src="/images/prishan.jpg" alt="logo" className="logo" />
+          <h1>Prishan's Boutique</h1>
+        </div>
+        <Register />
+      </Modal>
     </div>
   );
 }
