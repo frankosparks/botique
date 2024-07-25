@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Assuming you're using react-router-dom v6
+import { useNavigate } from "react-router-dom"; 
 
-function Register() {
+function Register({ setOpenRegister}) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -21,6 +21,8 @@ function Register() {
       if (res.data === "exist") {
         alert("User already exists");
       } else if (res.data === "notexist") {
+        alert("Successfully registered")
+        setOpenRegister(prev => !prev)
         navigate("/", { state: { id: username } });
       }
     } catch (error) {

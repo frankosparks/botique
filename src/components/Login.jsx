@@ -190,10 +190,10 @@ import React, { useState } from "react";
 import Register from "./Register";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
-import { useLocation } from "react-router";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
-  const history = useLocation();
+function Login({ setOpenLogin }) {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [openRegister, setOpenRegister] = useState(false);
@@ -208,8 +208,9 @@ function Login() {
     try {
       const res = await axios.post("http://localhost:8000/", { username, password });
       if (res.data === "exist") {
-        alert("Done");
-        // history("/", { state: { id: username } });
+        // alert("Done");
+        setOpenLogin(prev => !prev);
+        navigate("/", { state: { id: username } });
       } else if (res.data === "notexist") {
         alert("User not registered");
       }
@@ -285,7 +286,7 @@ function Login() {
           <img src="/images/prishan.jpg" alt="logo" className="logo" />
           <h1>Prishan's Boutique</h1>
         </div>
-        <Register />
+        <Register setOpenRegister={setOpenRegister} />
       </Modal>
     </div>
   );
