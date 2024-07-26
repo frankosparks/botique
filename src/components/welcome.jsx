@@ -25,12 +25,20 @@ function Welcome(){
     timeOfDay = "night"
   }
 
+  let cont;
+  if(location.state && location.state.id){
+    cont = location.state.id
+  }
+  else{
+    cont = ""
+  }
+
   return(
     <div className="discount">
       <div className="vcontainer half-bg">
         <div className="welcome">
-          <h1 className="c_b">Good {timeOfDay} {location.state.id}, welcome and shop with us &#129303;.</h1>
-          <h2 className="c_b">Feel Youself a new</h2>
+          <h1 className="c_b">Good {timeOfDay} {cont}, welcome and shop with us &#129303;.</h1>
+          <h2 className="c_b">Feel Yourself a new</h2>
           <p className="align c_b">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, illo hic delectus nisi corrupti voluptates rerum veritatis vel vero pariatur. Numquam incidunt excepturi libero perspiciatis provident sed quisquam natus omnis?</p>
           <p className="align c_b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptas!</p>
 
