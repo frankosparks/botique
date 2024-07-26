@@ -69,7 +69,7 @@ function Footer(){
           <img src="\images\prishan.jpg" alt="logo" className="logo"/>
            <h1>Prishan's Botique</h1> 
           </div>
-           <Register />
+           <Register setOpenRegister={setOpenRegister}/>
         </Modal>
 
         <div className="f-moremore ">
