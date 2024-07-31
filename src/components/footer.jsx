@@ -117,15 +117,15 @@ function Footer(){
               </span>
               <span>
                 <img src="\images\tiktok.avif" alt="" className="f-small mg3"/> 
-                <a href="#tiktok" className="f-media c_g">@_pritt_dress_makers</a>
+                <a href="#tiktok" className="f-media c_g"> @_pritt_dress_makers</a>
               </span>
               <span>
                 <img src="\images\twitter.avif" alt="" className="f-small mg3"/>
-                <a href="#twitter" className="f-media c_g">@_pritt_dress_makers</a>
+                <a href="#twitter" className="f-media c_g"> @_pritt_dress_makers</a>
               </span>
               <span>
                 <img src="\images\youtube.avif" alt="" className="f-small mg3"/> 
-                <a href="#youtube"className="f-media c_g">@_pritt_dress_makers</a>
+                <a href="#youtube"className="f-media c_g"> @_pritt_dress_makers</a>
               </span>
             </div>
             
