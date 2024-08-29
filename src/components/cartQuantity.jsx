@@ -5,6 +5,11 @@ function CartQ() {
   const [count, setCount] = useContext(Context);
   const [cartItems, setCartItems] = useState([]);
 
+  // Helper function to calculate total items count
+  const calculateItemCount = (items) => {
+    return items.reduce((total, item) => total + item.quantity, 0);
+  };
+
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const initializedCart = cart.map(item => ({
@@ -13,31 +18,33 @@ function CartQ() {
     }));
     setCartItems(initializedCart);
 
-    // Initialize the count based on the number of unique items in the cart
-    setCount(initializedCart.length);
+    // Set count to the total number of items in the cart
+    setCount(calculateItemCount(initializedCart));
   }, [setCount]);
 
   const increment = (itemId) => {
-    setCartItems(prevItems =>
-      prevItems.map(item =>
-        item.id === itemId ? { ...item, quantity: Math.min(item.quantity + 1, 20) } : item
-      )
+    const updatedCart = cartItems.map(item =>
+      item.id === itemId ? { ...item, quantity: Math.min(item.quantity + 1, 20) } : item
     );
+    setCartItems(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    setCount(calculateItemCount(updatedCart));
   };
 
   const decrement = (itemId) => {
-    setCartItems(prevItems =>
-      prevItems.map(item =>
-        item.id === itemId ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
-      )
+    const updatedCart = cartItems.map(item =>
+      item.id === itemId ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
     );
+    setCartItems(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    setCount(calculateItemCount(updatedCart));
   };
 
   const removeFromCart = (itemToRemove) => {
     const updatedCart = cartItems.filter(item => item.id !== itemToRemove.id);
     setCartItems(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-    setCount(prevCount => prevCount - 1);
+    setCount(calculateItemCount(updatedCart));
   };
 
   const calculateTotal = (item) => {
