@@ -41,7 +41,7 @@ function CartQ() {
   };
 
   const calculateTotal = (item) => {
-    return item.quantity * item.price_red;
+    return item.quantity * item.d_price;
   };
 
   const calculateGrandTotal = () => {
@@ -60,8 +60,8 @@ function CartQ() {
               <span className="c_c">{item.quantity}</span>
               <button onClick={() => decrement(item.id)} className="c_B">-</button>
             </div>
-            <span className="d-price c_q red">Ksh {item.d_price}</span>
-            <span className="d-price green c_q">Ksh {item.price_red}</span>
+            <span className="d-price c_q red">Ksh {item.price_red}</span>
+            <span className="d-price green c_q">Ksh {item.d_price}</span>
             <span className="d-price orange c_q">{calculateTotal(item)}/=</span>
             <button className="del" onClick={() => removeFromCart(item)}>Delete</button>
           </div>
