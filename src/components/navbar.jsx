@@ -12,29 +12,28 @@ import ScrollToTop from "./scrollTop";
 import Search from "./search";
 import Cart from "./cartItems";
 import CartQ from "./cartQuantity";
-
+import Profile from "./page";
 
 export const Context = React.createContext();
 
 function NavB() {
-const[count, setCount] = useState(0);
-const [loginObj, setLoginObj] = useState({})
-const[openLogin, setOpenLogin] = useState(false)
-const handleLogin = (login) => {
-  if(login) {
-      setLoginObj(login)
-  }
-  setOpenLogin(prev => !prev)
-};
+  const [count, setCount] = useState(0);
+  const [loginObj, setLoginObj] = useState({});
+  const [openLogin, setOpenLogin] = useState(false);
+  const handleLogin = (login) => {
+    if (login) {
+      setLoginObj(login);
+    }
+    setOpenLogin((prev) => !prev);
+  };
 
   return (
-  
-      <div>
-        <ScrollToTop />
-        <Context.Provider value={[count, setCount]}>
+    <div>
+      <ScrollToTop />
+      <Context.Provider value={[count, setCount]}>
         <header className="nav-b fixed ">
           <div>
-            <img src="\images\prishan.jpg" alt="logo" className="logo"/>
+            <img src="\images\prishan.jpg" alt="logo" className="logo" />
             <span className="Rapp">Prishan's Botique</span>
           </div>
 
@@ -56,55 +55,56 @@ const handleLogin = (login) => {
             </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               Contact Us
-            </Nav.Link>   
+            </Nav.Link>
             <Nav.Link as={Link} to="/cart">
-            <div className="cart-container">
-              <img src="\images\pink-shopping-cart-icon-17.gif" alt="" className="cart"/>
-              <span className="cart-count">{count}</span>
-            </div> 
-            </Nav.Link>                                                   
+              <div className="cart-container">
+                <img
+                  src="\images\pink-shopping-cart-icon-17.gif"
+                  alt=""
+                  className="cart"
+                />
+                <span className="cart-count">{count}</span>
+              </div>
+            </Nav.Link>
             <Search />
             {/* <Cart /> */}
-            
-            <button 
-              type="button" 
-              className="btnlogin" 
+
+            <button
+              type="button"
+              className="btnlogin"
               onClick={() => handleLogin()}
-            >Login</button>
-            </Nav>
-            
+            >
+              Login
+            </button>
+          </Nav>
         </header>
-        
+
         <div>
-        
-            <Routes>
-              <Route exact path="/" element={<Welcome />} />
-              <Route path="/products" element={<Products />} />  
-              <Route path="/shopnow/*" element={ <NavP /> } /> 
-              <Route path="/trends" element={<Trends />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/contact" element={<Footer />} /> 
-              <Route path="/cart" element={<CartQ />} />
-            </Routes>
-          
+          <Routes>
+            <Route exact path="/" element={<Welcome />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/shopnow/*" element={<NavP />} />
+            <Route path="/trends" element={<Trends />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Footer />} />
+            <Route path="/cart" element={<CartQ />} />
+            <Route path="/productProfile" element={<Profile />} />
+          </Routes>
         </div>
-       
-        </Context.Provider>
-        <Modal 
-           show={openLogin}
-           onHide={() => handleLogin()}
-           size={""}
-           className="modal"
-           
-         >
-          <div className="title">
-          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
-           <h1>Prishan's Botique</h1> 
-          </div>
-           <Login setOpenLogin={setOpenLogin}/>
-        </Modal>
-      </div>
-    
+      </Context.Provider>
+      <Modal
+        show={openLogin}
+        onHide={() => handleLogin()}
+        size={""}
+        className="modal"
+      >
+        <div className="title">
+          <img src="\images\prishan.jpg" alt="logo" className="logo" />
+          <h1>Prishan's Botique</h1>
+        </div>
+        <Login setOpenLogin={setOpenLogin} />
+      </Modal>
+    </div>
   );
 }
 

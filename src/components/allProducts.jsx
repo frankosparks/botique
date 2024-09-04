@@ -1,6 +1,7 @@
 import React,{useState, useContext} from "react";
 import { Context } from "./navbar";
 import CustomAlert from "./timeout";
+import { useNavigate } from "react-router";
 
 function Product(props){
 const[showAlert, setshowAlert]= useState("")
@@ -9,7 +10,8 @@ const[add, setAdd] = useState("Add to cart")
 const[background, setBackground] = useState('#dd1245')
 const [inCart, setInCart] = useState(
   JSON.parse(localStorage.getItem('cart'))?.some(item => item.id === props.id) || false
-);
+);  
+const navigate = useNavigate();
 
 function startCount(){
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -36,6 +38,10 @@ function startCount(){
 const closeAlert = () => {
   setshowAlert("");
 };
+function handleImageClick () {
+  localStorage.setItem("currentImage",JSON.stringify(props))
+  navigate("/productProfile");
+}
 
 let discountAmount = props.price_red - props.d_price;
   let discountPercentage = (discountAmount / props.price_red) * 100;
@@ -43,7 +49,9 @@ let discountAmount = props.price_red - props.d_price;
     <div className="b-container">
        {showAlert && <CustomAlert message={showAlert} onClose={closeAlert} />}
       <div className="bag">
-        <img src={props.image} alt="" className="bag-image" />
+        <img src={props.image} alt="" className="bag-image"
+        onClick={handleImageClick}
+        />
         <h4 className="center">{props.name}</h4>
         <p className="d-price">Ksh{props.d_price}</p>
         <p className="price">
