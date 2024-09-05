@@ -88,7 +88,7 @@ function NavB() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Footer />} />
             <Route path="/cart" element={<CartQ />} />
-            <Route path="/productProfile" element={<Profile />} />
+            <Route path="/productProfile/*" element={<Profile />} />
           </Routes>
         </div>
       </Context.Provider>
