@@ -940,6 +940,7 @@ code {
   margin-top: 0.9375rem; /* mt-3.75 */
   display: flex;
   gap: 0.25rem; /* gap-1 */
+  list-style: none;
 }
 
 .rating-link {
