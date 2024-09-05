@@ -39,7 +39,8 @@ const closeAlert = () => {
   setshowAlert("");
 };
 function handleImageClick () {
-  localStorage.setItem("currentImage",JSON.stringify(props))
+  localStorage.setItem("currentProduct", JSON.stringify(props));
+  console.log("Stored product:", props); // Check this log
   navigate("/productProfile");
 }
 

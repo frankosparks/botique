@@ -1,40 +1,35 @@
 import React, { useState } from "react";
 
-const ProductImage = ({images}) => {
-  const [selectedImage, setSelectedImage] = useState(images[0])
-  function handleClick(image){
-    setSelectedImage(image);
-  }
-  return (
-    <div className="c">
-      <div className="flex flex-col gap-6 w-[323px] h-[737px]">
-        <div className="w-[323px] h-[510px] border border-gray-300 flex item-center justify-center">
-          <img
-            className="w-[270px] h-[270px]  mb-0 m-0 mt-28 mx-[26px]"
-            src={selectedImage}
-            alt="Selected Product"
-          />
-        </div>
+const ProductImages = ({ images }) => {
+  const [selectedImage, setSelectedImage] = useState(images[0]);
 
-        <div className="flex gap-1">
-          {images.map((image, index) => (
-            <div key={index} className="cursor-pointer w-[322px]">
-              <img
-                src={image}
-                alt={`Product ${index + 1}`}
-                className={`w-28 border bg-[#fff] ${
-                  selectedImage === image
-                    ? " border bg-transparent"
-                    : "border-gray-300"
-                }`}
-                onClick={() => handleClick(image)}
-              />
-            </div>
-          ))}
-        </div>
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  return (
+    <div className="product-images-container">
+      <div className="product-image-selected">
+        <img
+          src={selectedImage}
+          alt="Selected Product"
+        />
+      </div>
+
+      <div className="product-images-list">
+        {images.map((image, index) => (
+          <div key={index} className="product-image-thumbnail">
+            <img
+              src={image}
+              alt={`Product ${index + 1}`}
+              className={selectedImage === image ? "selected" : ""}
+              onClick={() => handleImageClick(image)}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default ProductImage;
+export default ProductImages;

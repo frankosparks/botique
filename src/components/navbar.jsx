@@ -12,7 +12,7 @@ import ScrollToTop from "./scrollTop";
 import Search from "./search";
 import Cart from "./cartItems";
 import CartQ from "./cartQuantity";
-import Profile from "./page";
+import Profile from "./Profile";
 
 export const Context = React.createContext();
 
