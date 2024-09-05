@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "./navbar";
+import CustomAlert from "./timeout";
+import { useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ProductImage from "./productImage";
@@ -6,6 +9,12 @@ import ProductImage from "./productImage";
 function Profile() {
   const [product, setProduct] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showAlert, setshowAlert] = useState("");
+  const [count, setCount] = useContext(Context);
+  const [add, setAdd] = useState("Add to cart");
+  const [background, setBackground] = useState("#dd1245");
+  const [inCart, setInCart] = useState(false);
+
   useEffect(() => {
     const storedProduct = JSON.parse(localStorage.getItem("currentProduct"));
     console.log("Retrieved product:", storedProduct); // Check this log
@@ -15,9 +24,45 @@ function Profile() {
       console.warn("No product in localStorage");
     }
   }, []);
+
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (product) {
+      setInCart(cart.some(item => item.id === product.id));
+    }
+  }, [product]);
+
+  function startCount() {
+    if (!product) return; // Early return if product is not set
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (add === "Add to cart" && background === '#dd1245') {
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      setAdd("Added");
+      setBackground('rgb(13, 150, 13)');
+      setCount(prev => prev + 1);
+      setshowAlert("Added to Cart");
+    } else {
+      setAdd("Add to cart");
+      setBackground('#dd1245');
+      setCount(prev => prev - 1);
+      setshowAlert("Removed from Cart");
+      cart = cart.filter(item => item.id !== product.id);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    setInCart(!inCart);
+  }
+
+  const closeAlert = () => {
+    setshowAlert("");
+  };
+
   if (!product) {
     return <h2 className="mt-32">Loading ...</h2>;
   }
+
   const productImages = [product.image, product.image1, product.image2];
 
   function handleInputChange(e) {
@@ -38,6 +83,7 @@ function Profile() {
 
   return (
     <div className="p_g">
+      {showAlert && <CustomAlert message={showAlert} onClose={closeAlert} />}
       <div className="fg-12">
         <div className="m-w-h">
           <ProductImage images={productImages} />
@@ -107,14 +153,22 @@ function Profile() {
                 <span>No category</span>
               )}
             </div>
-            <p>
+            <p className="flex gap-2">
               <a
                 href={product.amazonLink || "#"}
                 rel="nofollow"
-                className="product-amazon-link"
+                className="product-amazon-link btnn"
               >
                 Checkout
               </a>
+              <button
+                className="btnn product-amazon-link"
+                style={{ background }}
+                onClick={startCount}
+              >
+                {add}
+                <img src="\images\white-cart3.webp" alt="" className="cart" />
+              </button>
             </p>
           </div>
         </div>
@@ -156,7 +210,7 @@ function Profile() {
                         />
                       ))}
                     </div>
-                    <span className="review-up-text"> &amp; Up</span> 
+                    <span className="review-up-text"> &amp; Up</span>
                   </a>
                 </li>
               ))}
