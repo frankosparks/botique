@@ -95,6 +95,7 @@ const Blog = () => {
           <BlogPost key={index} title={post.title} date={post.date} content={post.content} />
         ))}
      </div>
+     <button type="submit" className="ml-16" onClick={}>+</button>
      <Footer />
     </div>
     
