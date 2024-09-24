@@ -737,6 +737,7 @@ code {
 .fg-12{
   display: flex;
   gap: 3rem;
+  justify-content: center;
 }
 .m-w-h{
   margin-top: 11px;
@@ -1127,3 +1128,17 @@ code {
   margin-left: 0.5rem; /* ml-2 */
 }
 
+.ml-16{
+  margin-left: 50rem;
+  background-color: white;
+  font-size: 4rem;
+  font-weight: 500;
+  border: 1px solid black;
+  border-radius: 90%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.1rem;
+}

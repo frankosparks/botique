@@ -1,9 +1,9 @@
-import React from 'react';
+import React , {useState} from 'react';
 import BlogPost from './blogPost';
 import Footer from './footer';
 
 const Blog = () => {
-  const blogPosts = [
+  const [blogPosts, setBlogPosts] = useState([
     {
       title: "Discover Elegance: Inside Prishan's Botique",
       date: "June 13, 2024",
@@ -27,7 +27,7 @@ const Blog = () => {
     {
       title: "Top 5 Must-Have Accessories for Spring",
       date: "February 28, 2024",
-      content: "Spring is here, and it’s time to update your accessory game! Check out our top picks for must-have accessories that will elevate your style this season..."
+      content: "Spring is here, and its time to update your accessory game! Check out our top picks for must-have accessories that will elevate your style this season..."
     },
     {
       title: "Customer Spotlight: Style Stories",
@@ -85,19 +85,72 @@ const Blog = () => {
       content: "We sat down with fashion influencer Shan to discuss their take on current trends, personal style, and tips for staying ahead of the fashion curve..."
     },
     // To add more blog posts as needed
-  ];
+  ])
   
+  const [showForm, setShowForm] = useState(false);
+  const [newTitle, setNewTitle] = useState('');
+  const [newContent, setNewContent] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const newPost = {
+      title: newTitle,
+      date: new Date().toLocaleDateString(), // Get the current date in a readable format
+      content: newContent,
+    };
+
+    // Add the new post to the blogPosts array
+    setBlogPosts([newPost, ...blogPosts]);
+
+    // Clear the form fields
+    setNewTitle('');
+    setNewContent('');
+
+    // Hide the form after submission
+    setShowForm(false);
+  };
+
   return (
     <div className="full">
       <div className="blog blogW">
-        <h1 className='h'>Our Blog <img src="\images\blog.avif" alt="logo " className="logo b-rad"/></h1>
+        <h1 className='h'>Our Blog <img src="/images/blog.avif" alt="logo " className="logo b-rad" /></h1>
+
         {blogPosts.map((post, index) => (
           <BlogPost key={index} title={post.title} date={post.date} content={post.content} />
         ))}
-     </div>
-     <Footer />
+
+        {/* Toggle form visibility */}
+        <button 
+          type="button" 
+          className="ml-16" 
+          onClick={() => setShowForm(!showForm)}
+        >
+          +
+        </button>
+
+        {/* Form to add a new blog post */}
+        {showForm && (
+          <form onSubmit={handleSubmit} className="new-post-form">
+            <input
+              type="text"
+              placeholder="Enter blog title"
+              value={newTitle}
+              onChange={(e) => setNewTitle(e.target.value)}
+              required
+            />
+            <textarea
+              placeholder="Enter blog content"
+              value={newContent}
+              onChange={(e) => setNewContent(e.target.value)}
+              required
+            ></textarea>
+            <button type="submit">Add Blog Post</button>
+          </form>
+        )}
+      </div>
+      <Footer />
     </div>
-    
   );
 };
 
