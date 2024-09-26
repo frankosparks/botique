@@ -135,6 +135,7 @@ const Blog = () => {
             <input
               type="text"
               placeholder="Enter blog title"
+              className='p-in in'
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
               required
@@ -142,10 +143,11 @@ const Blog = () => {
             <textarea
               placeholder="Enter blog content"
               value={newContent}
+              className='p-in in'
               onChange={(e) => setNewContent(e.target.value)}
               required
             ></textarea>
-            <button type="submit">Add Blog Post</button>
+            <button type="submit"className='p-in in-btn'>Add Blog Post</button>
           </form>
         )}
       </div>

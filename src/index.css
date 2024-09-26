@@ -1142,3 +1142,20 @@ code {
   align-items: center;
   padding-bottom: 1.1rem;
 }
+.new-post-form{
+  display: flex;
+  gap: 2rem;
+  height: 3rem;
+}
+.p-in{
+  border-radius: 10px;
+  border: none;
+}
+.in-btn{
+  font-weight: 500;
+  background-color: green;
+  color: white;
+}
+.new-post-form ::placeholder{
+  color: #e53238;
+}
