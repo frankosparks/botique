@@ -33,8 +33,9 @@ function NavB() {
       <Context.Provider value={[count, setCount]}>
         <header className="nav-b fixed ">
           <div>
-            <img src="\images\prishan.jpg" alt="logo" className="logo" />
-            <span className="Rapp">Prishan's Botique</span>
+            {/* <img src="\images\prishan.jpg" alt="logo" className="logo" /> */} <img src="https://img.freepik.com/free-psd/letter-f-with-flower-elements-flower-made-flower-3d-isolated-transparent-background_191095-19983.jpg?t=st=1741291131~exp=1741294731~hmac=48d6b7ff6e7cf9e2ee068082d2234c896de313cb68cd72b132fcc33ed13a5184&w=740" alt="logo" className="logo" />
+            
+            <span className="Rapp">Fortune Botique</span>
           </div>
 
           <Nav className="navigation">
@@ -99,8 +100,10 @@ function NavB() {
         className="modal"
       >
         <div className="title">
-          <img src="\images\prishan.jpg" alt="logo" className="logo" />
-          <h1>Prishan's Botique</h1>
+          {/* <img src="\images\prishan.jpg" alt="logo" className="logo" /> */}
+          <img src="https://img.freepik.com/free-psd/letter-f-with-flower-elements-flower-made-flower-3d-isolated-transparent-background_191095-19983.jpg?t=st=1741291131~exp=1741294731~hmac=48d6b7ff6e7cf9e2ee068082d2234c896de313cb68cd72b132fcc33ed13a5184&w=740" alt="logo" className="logo" />
+          
+          <h1>Fortune Botique</h1>
         </div>
         <Login setOpenLogin={setOpenLogin} />
       </Modal>

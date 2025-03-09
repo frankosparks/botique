@@ -215,7 +215,7 @@ code {
 }
 .Rapp {
   color: black;
-  font-size: 22px;
+  font-size: 22px;  
   font-family: sans-serif;
   font-weight: 700;
   margin-left: 15px;
@@ -409,7 +409,7 @@ code {
   margin-left: 3rem;
 }
 .pass,
-.reg {
+.reg {  
   color: rgb(47, 47, 146);
 }
 .title {
@@ -553,7 +553,7 @@ code {
   color: white;
 }
 .c_g{
-  color: #676770;
+  color: #a7a7b8;
 }
 .blog {
   max-width: 800px;

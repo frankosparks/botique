@@ -66,8 +66,9 @@ function Footer(){
            
          >
           <div className="title">
-          <img src="\images\prishan.jpg" alt="logo" className="logo"/>
-           <h1>Prishan's Botique</h1> 
+          <img src="https://img.freepik.com/free-psd/letter-f-with-flower-elements-flower-made-flower-3d-isolated-transparent-background_191095-19983.jpg?t=st=1741291131~exp=1741294731~hmac=48d6b7ff6e7cf9e2ee068082d2234c896de313cb68cd72b132fcc33ed13a5184&w=740" alt="logo" className="logo"/>
+          <h1 className="text-black text-center">Fortune Botique</h1>
+          {/* <img src="\images\prishan.jpg" alt="logo" className="logo"/> */}
           </div>
            <Register setOpenRegister={setOpenRegister}/>
         </Modal>
@@ -143,9 +144,14 @@ function Footer(){
               <Routes>
                 <Route path="/" element={<Welcome />} />
               </Routes> */}
-          <img src="\images\prishan.jpg" alt="logo" className="logo" onClick={()=> navigate('/')} style={{ cursor: 'pointer' }}/>
-          <span className="Rapp c_w">Prishan's Botique.</span>
-             Copyright &copy; 2024 Prishan's Botique. All rights reserved.
+          <img src="https://img.freepik.com/free-psd/letter-f-with-flower-elements-flower-made-flower-3d-isolated-transparent-background_191095-19983.jpg?t=st=1741291131~exp=1741294731~hmac=48d6b7ff6e7cf9e2ee068082d2234c896de313cb68cd72b132fcc33ed13a5184&w=740" alt="logo" className="logo" onClick={()=> navigate('/')} style={{ cursor: 'pointer' }}/>
+          <br />
+          <span className="text-white text-[22px] font-sans font-bold mt-2">
+            Fortune botique.
+          </span>
+          <span className="text-white mt-1 text-[15px] font-dancing">
+            Copyright &copy; 2025 Fortune botique. All rights reserved.
+          </span>
           </p>  
      </div>
     </div>

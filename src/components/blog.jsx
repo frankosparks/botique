@@ -5,9 +5,9 @@ import Footer from './footer';
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([
     {
-      title: "Discover Elegance: Inside Prishan's Botique",
+      title: "Discover Elegance: Inside Fortune Botique",
       date: "June 13, 2024",
-      content: "Welcome to Prishan's Botique, where style meets sophistication. Nestled in the heart of Nakuru, our boutique offers a curated selection of unique and fashionable items that cater to every taste and occasion..."
+      content: "Welcome to Fortune Botique, where style meets sophistication. Nestled in the heart of Nakuru, our boutique offers a curated selection of unique and fashionable items that cater to every taste and occasion..."
     },
     {
       title: "Summer Collection Launch",
@@ -17,7 +17,7 @@ const Blog = () => {
     {
       title: "Sustainable Fashion: Our Commitment",
       date: "April 5, 2024",
-      content: "At Prishan's Botique, we believe in fashion with a conscience. Discover how our sustainable practices and eco-friendly materials make a positive impact on the environment and our community..."
+      content: "At Fortune Botique, we believe in fashion with a conscience. Discover how our sustainable practices and eco-friendly materials make a positive impact on the environment and our community..."
     },
     {
       title: "Meet the Designer: Pritt",
@@ -32,7 +32,7 @@ const Blog = () => {
     {
       title: "Customer Spotlight: Style Stories",
       date: "January 10, 2024",
-      content: "We love to celebrate our customers! Read about their unique style stories and how they incorporate pieces from Prishan's Botique into their everyday wardrobe..."
+      content: "We love to celebrate our customers! Read about their unique style stories and how they incorporate pieces from Fortune Botique into their everyday wardrobe..."
     },
     {
       title: "How to Style a Little Black Dress",
@@ -40,7 +40,7 @@ const Blog = () => {
       content: "The little black dress is a timeless staple. Discover our tips and tricks for styling it in various ways for different occasions..."
     },
     {
-      title: "Holiday Gift Guide: Perfect Presents from Prishan's Botique",
+      title: "Holiday Gift Guide: Perfect Presents from Fortune Botique",
       date: "November 30, 2023",
       content: "The holiday season is upon us! Find the perfect gifts for your loved ones with our curated holiday gift guide..."
     },
@@ -75,9 +75,9 @@ const Blog = () => {
       content: "Planning a vacation? Discover our top fashion tips to travel in style, from packing essentials to versatile outfits for any destination..."
     },
     {
-      title: "The Evolution of Prishan's Botique: A Look Back",
+      title: "The Evolution of Fortune Botique: A Look Back",
       date: "April 20, 2023",
-      content: "Join us as we take a look back at the evolution of Prishan's Botique. From our humble beginnings to becoming a fashion destination, it’s been an incredible journey..."
+      content: "Join us as we take a look back at the evolution of Fortune Botique. From our humble beginnings to becoming a fashion destination, it’s been an incredible journey..."
     },
     {
       title: "Exclusive Interview: Shan on Fashion and Trends",

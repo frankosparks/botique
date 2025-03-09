@@ -7,23 +7,26 @@ import CustomAlert from "./timeout";
 
 function Login({ setOpenLogin }) {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [openRegister, setOpenRegister] = useState(false);
-  const[showAlert, setshowAlert]= useState("")
+  const [showAlert, setshowAlert] = useState("");
 
   const handleRegister = () => {
-    setOpenRegister(prev => !prev);
+    setOpenRegister((prev) => !prev);
   };
 
   async function submit(e) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8000/", { username, password });
+      const res = await axios.post("http://localhost:8000/", {
+        username,
+        password,
+      });
       if (res.data === "exist") {
         setshowAlert("Done");
-        setOpenLogin(prev => !prev);
+        setOpenLogin((prev) => !prev);
         navigate("/", { state: { id: username } });
       } else if (res.data === "notexist") {
         setshowAlert("User not registered");
@@ -36,7 +39,9 @@ function Login({ setOpenLogin }) {
         setshowAlert(`Server error: ${error.response.data}`);
       } else if (error.request) {
         console.log("Error request:", error.request);
-        setshowAlert("No response received from server. Please try again later.");
+        setshowAlert(
+          "No response received from server. Please try again later."
+        );
       } else {
         console.log("Error message:", error.message);
         setshowAlert(`Error: ${error.message}`);
@@ -102,8 +107,14 @@ function Login({ setOpenLogin }) {
         className="modal"
       >
         <div className="title">
-          <img src="/images/prishan.jpg" alt="logo" className="logo" />
-          <h1>Prishan's Boutique</h1>
+          {/* <img src="/images/prishan.jpg" alt="logo" className="logo" /> */}
+          <img
+            src="https://img.freepik.com/free-psd/letter-f-with-flower-elements-flower-made-flower-3d-isolated-transparent-background_191095-19983.jpg?t=st=1741291131~exp=1741294731~hmac=48d6b7ff6e7cf9e2ee068082d2234c896de313cb68cd72b132fcc33ed13a5184&w=740"
+            alt="logo"
+            className="logo"
+          />
+
+          <h1>Fortune Boutique</h1>
         </div>
         <Register setOpenRegister={setOpenRegister} />
       </Modal>
